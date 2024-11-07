@@ -59,6 +59,7 @@ bindkey '^[w' kill-region
 # Enviorment Variables
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+export QT_QPA_PLATFORM="xcb"
 
 # History
 HISTSIZE=5000
