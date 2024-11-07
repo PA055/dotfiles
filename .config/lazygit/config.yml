@@ -424,6 +424,11 @@ promptToReturnFromSubprocess: true
 
 # Custom Commands
 customCommands:
+  - command: "git pull && git push"
+    context: "global"
+    key: "<c-s>"
+    description: "sync to repo (pull and push)"
+    loadingText: "syncing..."
   - command: "git commit -m '{{ .Form.Type }}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}: {{ .Form.Emoji }} {{ .Form.Message }} \n\n{{ if .Form.Description }}{{ .Form.Description }}{{ end }}'"
     context: "global"
     key: "c"
