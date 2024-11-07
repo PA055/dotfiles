@@ -1,0 +1,3 @@
+.config/custom-omz/plugins/*
+!.config/custom-omz/plugins/example
+.config/custom-omz/themes/powerlevel10k
