@@ -422,6 +422,83 @@ notARepository: prompt
 # If true, display a confirmation when subprocess terminates. This allows you to view the output of the subprocess before returning to Lazygit.
 promptToReturnFromSubprocess: true
 
+# Custom Commands
+customCommands:
+  - command: "git commit -m '{{ .Form.Type }}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}: {{ .Form.Emoji }} {{ .Form.Message }} \n\n{{ if .Form.Description }}{{ .Form.Description }}{{ end }}'"
+    context: "global"
+    key: "c"
+    description: "Create a new Conventional Commit"
+    loadingText: "Creating commit..."
+    prompts:
+      - type: "menu"
+        key: "Type"
+        title: "Type of change"
+        options:
+          - name: "build"
+            description: "Changes that affect the build system or external dependencies"
+            value: "build"
+          - name: "feat"
+            description: "A new feature"
+            value: "feat"
+          - name: "fix"
+            description: "A bug fix"
+            value: "fix"
+          - name: "chore"
+            description: "Other changes that don't modify src or test files"
+            value: "chore"
+          - name: "ci"
+            description: "Changes to CI configuration files and scripts"
+            value: "ci"
+          - name: "docs"
+            description: "Documentation only changes"
+            value: "docs"
+          - name: "perf"
+            description: "A code change that improves performance"
+            value: "perf"
+          - name: "refactor"
+            description: "A code change that neither fixes a bug nor adds a feature"
+            value: "refactor"
+          - name: "revert"
+            description: "Reverts a previous commit"
+            value: "revert"
+          - name: "style"
+            description: "Changes that do not affect the meaning of the code"
+            value: "style"
+          - name: "test"
+            description: "Adding missing tests or correcting existing tests"
+            value: "test"
+      - type: "input"
+        title: "Scope"
+        key: "Scope"
+        initialValue: ""
+      - type: menuFromCommand
+        title: 'Select a gitmoji:'
+        key: Emoji
+        command: gitmoji -l
+        filter: ^(.*?) - (:.*?:) - (.*)$
+        labelFormat: '{{ .group_1 }} - {{ .group_2 }} - {{ .group_3 }}'
+        valueFormat: '{{ .group_2 }}'
+      - type: "menu"
+        key: "Breaking"
+        title: "Breaking Change"
+        options:
+          - name: "no"
+            value: "yes"
+          - name: "yes"
+            value: "!"
+      - type: "input"
+        title: "message"
+        key: "Message"
+        initialValue: ""
+      - type: "input"
+        title: "description"
+        key: "Description"
+        initialValue: ""
+      - type: "confirm"
+        key: "Confirm"
+        title: "Commit"
+        body: "Are you sure you want to commit?"
+
 # Keybindings
 keybinding:
   universal:
@@ -508,10 +585,10 @@ keybinding:
     recentRepos: <enter>
     allBranchesLogGraph: a
   files:
-    commitChanges: c
+    commitChanges: C
     commitChangesWithoutHook: w
     amendLastCommit: A
-    commitChangesWithEditor: C
+    commitChangesWithEditor: <c-e>
     findBaseCommitForFixup: <c-f>
     confirmDiscard: x
     ignoreFile: i
