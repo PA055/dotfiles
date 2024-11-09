@@ -51,6 +51,14 @@ return {
   },
 
   {
+    'adelarsq/image_preview.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require("image_preview").setup()
+    end
+  },
+
+  {
     "https://codeberg.org/esensar/nvim-dev-container",
     dependencies = 'nvim-treesitter/nvim-treesitter',
     cmd = { "DevcontainerStart", "DevcontainerAttach", "DevcontainerExec", "DevcontainerStop", "DevcontainerStopAll", "DevcontainerRemoveAll", "DevcontainerLogs", "DevcontainerEditNearestConfig" }
