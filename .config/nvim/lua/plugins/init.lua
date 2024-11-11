@@ -11,6 +11,20 @@ return {
   },
 
   {
+    'vyfor/cord.nvim',
+    build = './build || .\\build',
+    cmd = { "CordConnect", "CordReconnect", "CordDisconnect", "CordTogglePresence", "CordShowPresence", "CordHidePresence", "CordToggleIdle", "CordIdle", "CordUnidle", "CordWorkspace" },
+    opts = {}, -- calls require('cord').setup()
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "TodoQuickFix", "TodoLocList", "TodoTelescope" },
+    opts = {}
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
@@ -51,11 +65,9 @@ return {
   },
 
   {
-    'adelarsq/image_preview.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require("image_preview").setup()
-    end
+    'kaarmu/typst.vim',
+    ft = 'typst',
+    lazy=false,
   },
 
   {

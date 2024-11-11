@@ -1,0 +1,3 @@
+ - Use [DistroBox](https://github.com/89luca89/distrobox) for package isolation
+ - Dont use a prebuilt for hyprland config
+ - keep nvim and kitty rices
