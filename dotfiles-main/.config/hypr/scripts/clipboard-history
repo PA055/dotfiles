@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $? -eq 0 ]
+then
+    text=$(cliphist list | fuzzel  --match-mode fzf --dmenu | cliphist decode)
+    wl-copy $text
+    wtype $text
+else
+    text=$(cliphist list | fuzzel  --match-mode fzf --dmenu | cliphist decode)
+    wl-copy $text
+    wtype $text
+fi
+exit
