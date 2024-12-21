@@ -7,6 +7,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = false;
+      push.default = "upstream";
       lfs.enable = true;
       credential.helper = "${
         pkgs.git.override { withLibsecret = true; }
