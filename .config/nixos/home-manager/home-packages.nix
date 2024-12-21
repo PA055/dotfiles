@@ -25,9 +25,12 @@
     zoxide
 
     # Coding stuff
-    python311
-    gnumake
     gcc
+    gnumake
+    lua51Packages.lua
+    lua51Packages.luarocks
+    python311
+    rustc
     nodejs_23
 
     # WM/DE stuff

@@ -1,0 +1,114 @@
+[2024-11-09T13:43:11.936Z][INFO] Command-line: /home/lufimio/Unity/Hub/Editor/6000.0.26f1/Editor/Data/Resources/PackageManager/Server/UnityPackageManager -s 15434 -ipc -ipc-path /tmp/Unity-Upm-15434.sock -l 2
+[2024-11-09T13:43:11.941Z][INFO] IPC server started (IPC path=/tmp/Unity-Upm-15434.sock).
+[2024-11-09T13:43:11.941Z][INFO] Hint: To connect to this UPM instance, launch Unity with the command-line parameter -upmIpcPath Upm-15434.
+[2024-11-09T13:43:11.963Z][INFO] project:update-dependencies <-- Request received
+params: {}
+[2024-11-09T13:43:11.984Z][INFO] project:update-dependencies --> 200 (21 ms)
+[2024-11-09T13:43:12.015Z][INFO] project:resolve-packages <-- Request received
+params: {}
+[2024-11-09T13:43:14.716Z][INFO] Downloading package [com.unity.package-manager.metadata-6000.0@0.0.41] from registry 'https://packages.unity.com'
+[2024-11-09T13:43:15.066Z][INFO] Finished downloading package [com.unity.package-manager.metadata-6000.0@0.0.41] from registry 'https://packages.unity.com' (size: 2.15 kB, time: 350ms)
+[2024-11-09T13:43:31.491Z][WARN] Requested version [2.0.3] for package [com.unity.ext.nunit] overridden by minimum version [2.0.5].
+[2024-11-09T13:43:31.492Z][WARN] Requested version [1.8.14] for package [com.unity.burst] overridden by minimum version [1.8.18].
+[2024-11-09T13:43:31.492Z][WARN] Requested version [2.4.3] for package [com.unity.collections] overridden by minimum version [2.5.1].
+[2024-11-09T13:43:31.492Z][WARN] Requested version [6.0.6] for package [com.unity.2d.common] overridden by minimum version [9.0.7].
+[2024-11-09T13:43:31.495Z][INFO] project:resolve-packages --> 200 (19481 ms)
+[2024-11-09T13:43:32.572Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2024-11-09T13:43:32.580Z][INFO] config:project:get-registries --> 200 (7 ms)
+[2024-11-09T13:43:32.592Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:43:32.602Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:43:33.003Z][INFO] project:list-packages --> 200 (411 ms)
+[2024-11-09T13:43:33.440Z][INFO] project:list-packages --> 200 (838 ms)
+[2024-11-09T13:44:01.699Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:44:01.710Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:44:01.722Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2024-11-09T13:44:01.728Z][INFO] config:project:get-registries --> 200 (6 ms)
+[2024-11-09T13:44:01.938Z][INFO] project:list-packages --> 200 (228 ms)
+[2024-11-09T13:44:02.208Z][INFO] project:list-packages --> 200 (509 ms)
+[2024-11-09T13:44:31.498Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:44:31.508Z][INFO] project:list-packages <-- Request received
+params: {}
+[2024-11-09T13:44:32.074Z][INFO] project:list-packages --> 200 (576 ms)
+[2024-11-09T13:44:32.462Z][INFO] project:list-packages --> 200 (954 ms)
+[2024-11-09T13:44:34.803Z][INFO] packages:get-all-packageinfo <-- Request received
+params: {}
+[2024-11-09T13:44:34.814Z][INFO] packages:get-all-packageinfo <-- Request received
+params: {}
+[2024-11-09T13:44:34.861Z][INFO] project:add-dependency <-- Request received
+params: {
+  "packageId": "com.unity.collab-proxy"
+}
+[2024-11-09T13:44:37.904Z][INFO] project:add-dependency --> 200 (3043 ms)
+[2024-11-09T13:44:53.417Z][INFO] packages:get-all-packageinfo --> 200 (18603 ms)
+[2024-11-09T13:44:53.714Z][INFO] packages:get-all-packageinfo --> 200 (18911 ms)
+[2024-11-09T13:44:53.810Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.addressables@2.2.2"
+}
+[2024-11-09T13:44:53.820Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.ads.ios-support@1.0.0"
+}
+[2024-11-09T13:44:53.830Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.asset-manager-for-unity@1.0.0"
+}
+[2024-11-09T13:44:53.844Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.entities.graphics@1.3.2"
+}
+[2024-11-09T13:44:53.852Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.netcode.gameobjects@2.0.0"
+}
+[2024-11-09T13:44:53.861Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.services.cloudcode@2.7.1"
+}
+[2024-11-09T13:44:53.873Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.services.deployment@1.3.0"
+}
+[2024-11-09T13:44:53.884Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.splines@2.6.1"
+}
+[2024-11-09T13:44:53.895Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.transport@2.3.0"
+}
+[2024-11-09T13:44:53.906Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.xr.magicleap@7.0.0"
+}
+[2024-11-09T13:44:53.921Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.xr.oculus@4.3.0"
+}
+[2024-11-09T13:44:53.934Z][INFO] packages:get-packageinfo --> 200 (114 ms)
+[2024-11-09T13:44:53.938Z][INFO] packages:get-packageinfo --> 200 (128 ms)
+[2024-11-09T13:44:53.944Z][INFO] packages:get-packageinfo --> 200 (114 ms)
+[2024-11-09T13:44:53.958Z][INFO] packages:get-packageinfo --> 200 (106 ms)
+[2024-11-09T13:44:53.958Z][INFO] packages:get-packageinfo --> 200 (114 ms)
+[2024-11-09T13:44:53.966Z][INFO] packages:get-packageinfo --> 200 (105 ms)
+[2024-11-09T13:44:53.967Z][INFO] packages:get-packageinfo --> 200 (94 ms)
+[2024-11-09T13:44:53.968Z][INFO] packages:get-packageinfo --> 200 (84 ms)
+[2024-11-09T13:44:53.971Z][INFO] packages:get-packageinfo --> 200 (76 ms)
+[2024-11-09T13:44:53.974Z][INFO] packages:get-packageinfo --> 200 (68 ms)
+[2024-11-09T13:44:53.974Z][INFO] packages:get-packageinfo --> 200 (53 ms)
+[2024-11-09T13:46:21.426Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.memoryprofiler"
+}
+[2024-11-09T13:46:21.471Z][INFO] packages:get-packageinfo --> 200 (45 ms)
+[2024-11-09T13:49:42.775Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2024-11-09T13:49:42.780Z][INFO] config:project:get-registries --> 200 (5 ms)
+[2024-11-09T14:01:49.110Z][INFO] Received shutdown request (SIGINT), shutting down Unity Package Manager
