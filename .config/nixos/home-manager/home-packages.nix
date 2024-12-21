@@ -10,8 +10,10 @@
     vesktop
 
     # CLI utils
+    bat
     bottom
     fzf
+    gitmoji-cli
     neofetch
     ripgrep
     stow
