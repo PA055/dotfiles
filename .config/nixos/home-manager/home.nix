@@ -1,12 +1,12 @@
-{ config, pkgs, ... }: {
+{ config, user, pkgs, version, ... }: {
 	imports = [
 		./modules
 		./home-packages.nix
 	];
 	home = {
-		username = "lufimio";
-		homeDirectory = "/home/lufimio";
-		stateVersion = "23.11";
+		username = "${user}";
+		homeDirectory = "/home/${user}";
+		stateVersion = "${version}";
 	};
 
 }

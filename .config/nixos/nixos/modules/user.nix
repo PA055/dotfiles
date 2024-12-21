@@ -3,7 +3,7 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
-    users.${user} = {
+    users.${user}= {
       isNormalUser = true;
       extraGroups = ["wheel" "networkmanager" ];
     };

@@ -14,6 +14,9 @@
     bottom
     fzf
     gitmoji-cli
+    git-credential-manager
+    gnome-keyring
+    libsecret
     neofetch
     ripgrep
     stow

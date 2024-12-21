@@ -19,7 +19,7 @@
     version = "24.11";
     unstable = import nixpkgs-unstable { inherit system; };
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs version hostname user unstable;
@@ -30,7 +30,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
-        inherit unstable inputs;
+        inherit unstable inputs user version;
       };
       modules = [ ./home-manager/home.nix ];
     };
