@@ -1,8 +1,0 @@
- - Use [DistroBox](https://github.com/89luca89/distrobox) for package isolation that requires GUI
- - Use Docker for dev envs that dont require GUIs
- - Dont use a prebuilt for hyprland config
- - keep nvim and kitty rices
- - use fabrik (gtk3 addon) for overlays and sidebars and stuff
- - waybar for top bar
- - copy current preconfig kinda (dots-hyprland)
- - figure out how to use sudo passwd as a 2fa subsitute, chatgpt gave good response
