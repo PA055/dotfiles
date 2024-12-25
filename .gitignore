@@ -1,0 +1,8 @@
+.config/vesktop/sessionData/
+.config/vesktop/Crashpad/
+.config/vesktop/SingletonCookie
+.config/vesktop/SingletonLock
+.config/vesktop/SingletonSocket
+.config/spicetify/Backup/
+.config/spicetify/Extracted/
+

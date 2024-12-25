@@ -1,0 +1,79 @@
+* {
+  border: none;
+  font-family: Font Awesome, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 1);
+}
+
+window#waybar {
+  background: transparent;
+}
+
+.modules-right * {
+  min-width: 25px;
+}
+
+#clock,
+#workspaces,
+#window,
+#system,
+#custom-notification,
+#device-status,
+#custom-recording,
+#privacy,
+#tray,
+#power {
+  border-radius: 15px;
+  border: 1px solid rgba(150, 100, 255, 1);
+  background-color: rgba(60, 70, 80, 0.8);
+  padding: 0 10px 0 10px;
+}
+
+#clock {
+  padding: 0 15px 0 15px;
+}
+
+#workspaces button {
+  border-radius: 0;
+}
+
+#workspaces button.visible {
+  box-shadow: inset 0 -3px rgba(150, 100, 255, 1);
+}
+
+#workspaces button.active {
+  box-shadow: inset 0 -3px rgba(255, 255, 255, 1);
+}
+
+#workspaces button.urgent {
+  box-shadow: inset 0 -3px rgba(189, 26, 26, 1);
+}
+
+#system * {
+  padding: 0 5px 0 5px;
+}
+
+#battery.warning {
+  color: rgba(220, 220, 20, 1);
+}
+
+#battery.critical {
+  color: rgba(220, 20, 20, 1);
+}
+
+#pulseaudio {
+  padding: 0 7px 0 7px;
+}
+
+#custom-notification {
+  padding: 0 12px 0 8px;
+}
+
+#custom-recording {
+  color: red;
+  padding: 0 12px 0 8px;
+}
+
+#power {
+  padding-right: 12px;
+}

@@ -1,0 +1,216 @@
+{
+  "layer": "top",
+  "margin-top": 3,
+  "spacing": 10,
+
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "group/system",
+    "custom/notification",
+    "custom/recording",
+    "privacy",
+    //"custom/privacy",
+    "tray",
+    "group/power"
+  ],
+
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%I:%M:%S %p}",
+    "tooltip-format": "{:%a %b %d, %Y}"
+  },
+
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace e+1 > /dev/null"
+  },
+
+
+
+  "hyprland/window": {
+    "rewrite": {
+      "[{]system[}] (.*)": "$1",
+      "": "Desktop"
+    },
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20,
+    "on-scroll-up": "hyprctl dispatch workspace e-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace e+1 > /dev/null"
+  },
+
+
+  "group/system": {
+    "orientation": "inherit",
+    "modules": [
+      "network",
+      "bluetooth",
+      "battery",
+      "pulseaudio",
+      "custom/arch-updates"
+    ]
+  },
+
+  "network": {
+    "format": "󰤫",
+    "format-ethernet": "󰈁",
+    "format-wifi": "{icon}",
+    "format-disconnected": "󰤮",
+    "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+    "on-click-middle": "kitty -T '{system} nmtui' -- nmtui",
+    "tooltip-format": "{essid}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "󰂯",
+    "format-connected": "󰂯 {num_connections}",
+    "on-click-middle": "kitty -T '{system} bluetui' -- bluetui",
+    "tooltip-format": "{status}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} 󰥉 {device_battery_percentage}%"
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "full": 100,
+      "normal": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-charging": "{icon}󱐋",
+    "format-plugged": "{icon}󱐋",
+    "format-critical": "󰂃",
+    "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+    "tooltip-format": "{capacity} - {timeTo}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [ "󰕿", "󰖀", "󰖀", "󰕾", "󰕾" ],
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "hands-free": "󰋋",
+      "car": "",
+      "phone": ""
+    },
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "pavucontrol",
+    "ignored-sinks": [ "Easy Effects Sink" ]
+  },
+
+  "custom/arch-updates": {
+    "exec": "yay -Qu | wc -l",
+    "interval": 3600,
+    "signal": 8,
+    "format": "󰣇 {}",
+    "on-click": "kitty --hold -T '{system} yay -Syu' -- yay -Syu && pkill -RTMIN+8 waybar",
+    "tooltip": false
+  },
+  
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+
+  "custom/recording": {
+    "format": "{}",
+    "tooltip-format": "Recording",
+    "signal": 9,
+    "exec": "pidof wl-screenrec > /dev/null && echo ''",
+    "interval": 1,
+    "on-click": "~/.config/hypr/hypr/scripts/hyprecord && pkill -RTMIN+9 waybar"
+  },
+
+  "custom/privacy": {
+    "format": ""
+  },
+
+  "privacy": {
+    "icon-spacing": 5,
+    "icon-size": 14,
+    "modules": [
+      { "type": "screenshare", "tooltip": false },
+      { "type": "audio-in", "tooltip": false }
+    ]
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 5
+  },
+
+  
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "power-menu",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/shutdown",
+      "custom/reboot",
+      "custom/lock"
+    ]
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip-format": "Power Menu"
+  },
+
+  "custom/shutdown": {
+    "format": "",
+    "on-double-click": "shutdown now",
+    "tooltip-format": "Shutdown"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "on-double-click": "reboot",
+    "tooltip-format": "Reboot"
+  },
+
+  "custom/lock": {
+    "format": "󰌾",
+    "on-click": "pidof hyprlock || hyprlock",
+    "tooltip-format": "Lock"
+  }
+}
