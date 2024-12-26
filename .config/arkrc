@@ -1,0 +1,15 @@
+[ExtractDialog]
+2 screens: Window-Maximized=true
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+splitterSizes=392,73
+
+[Viewer]
+StatusBar=Disabled
+ToolBarsMovable=Disabled

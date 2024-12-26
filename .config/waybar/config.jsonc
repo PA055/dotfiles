@@ -116,7 +116,7 @@
   },
 
   "custom/arch-updates": {
-    "exec": "yay -Qu | wc -l",
+    "exec": "(checkupdates && yay -Qua) | wc -l",
     "interval": 3600,
     "signal": 8,
     "format": "󰣇 {}",
