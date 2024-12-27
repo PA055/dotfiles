@@ -8,3 +8,5 @@
 .config/clipse/tmp_files/
 .config/clipse/clipboard_history.json
 .config/gh/hosts.yml
+.config/obs-studio/logs/
+.config/obs-studio/profiler_data/
