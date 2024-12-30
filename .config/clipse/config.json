@@ -27,9 +27,9 @@
         "yankFilter": "ctrl+s"
     },
     "imageDisplay": {
-        "type": "basic",
+        "type": "kitty",
         "scaleX": 9,
-        "scaleY": 9,
+        "scaleY": 13,
         "heightCut": 2
     }
 }

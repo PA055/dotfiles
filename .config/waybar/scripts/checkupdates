@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+UPDATES=$(checkupdates & yay -Qua)
+echo "{\"text\": \"$(echo "$UPDATES" | wc -l)\", \"tooltip\": \"$(echo "$UPDATES" | cut -f1 -d" " | sed -E ':a;N;$!ba;s/\r{0,1}\n/\r/g')\"}"

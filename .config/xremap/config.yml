@@ -1,0 +1,16 @@
+keymap:
+  - name: Right Alt + HJKL to Arrow Keys
+    remap:
+      Alt_R: Reserved
+      Alt_R-h: Left
+      Alt_R-j: Down
+      Alt_R-K: Up
+      Alt_R-l: Right
+
+modmap:
+  - name: CapsLock to RightCtrl/Esc
+    remap:
+      CapsLock:
+        held: Ctrl_R
+        alone: Esc
+        alone_timeout: 500

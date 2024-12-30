@@ -12,11 +12,11 @@
   ],
   "modules-right": [
     "group/system",
-    "custom/notification",
     "custom/recording",
     "privacy",
     //"custom/privacy",
     "tray",
+    "custom/notification",
     "group/power"
   ],
 
@@ -24,12 +24,26 @@
   "clock": {
     "interval": 1,
     "format": "{:%I:%M:%S %p}",
-    "tooltip-format": "{:%a %b %d, %Y}"
+    "format-alt": "{:%a %b %d, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": -1,
+      "format": { "today": "<span color='#ff6699'><b><u>{}</u></b></span>" }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-middle": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
 
   "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace e-1 > /dev/null",
-    "on-scroll-down": "hyprctl dispatch workspace e+1 > /dev/null"
+    "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null"
   },
 
 
@@ -42,8 +56,9 @@
     "separate-outputs": true,
     "icon": true,
     "icon-size": 20,
-    "on-scroll-up": "hyprctl dispatch workspace e-1 > /dev/null",
-    "on-scroll-down": "hyprctl dispatch workspace e+1 > /dev/null"
+    "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null",
+    "on-click": "walker"
   },
 
 
@@ -116,12 +131,12 @@
   },
 
   "custom/arch-updates": {
-    "exec": "(checkupdates && yay -Qua) | wc -l",
+    "exec": "~/.config/waybar/scripts/checkupdates",
+    "return-type": "json",
     "interval": 3600,
     "signal": 8,
     "format": "󰣇 {}",
-    "on-click": "kitty --hold -T '{system} yay -Syu' -- yay -Syu && pkill -RTMIN+8 waybar",
-    "tooltip": false
+    "on-click": "kitty --hold -T '{system} yay -Syu' -- yay -Syu && pkill -RTMIN+8 waybar"
   },
   
 

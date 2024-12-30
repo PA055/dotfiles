@@ -4,25 +4,13 @@
   },
   "app_launch_prefix": "",
   "as_window": false,
+  "disabled": [
+    "ai"
+  ],
+
+  "plugins": [],
+  
   "builtins": {
-    "ai": {
-      "anthropic": {
-        "prompts": [
-          {
-            "label": "General Assistant",
-            "max_tokens": 1000,
-            "model": "claude-3-5-sonnet-20241022",
-            "prompt": "You are a helpful general assistant. Keep your answers short and precise.",
-            "temperature": 1
-          }
-        ]
-      },
-      "icon": "help-browser",
-      "name": "ai",
-      "placeholder": "AI",
-      "switcher_only": true,
-      "weight": 5
-    },
     "applications": {
       "actions": {
         "enabled": true,
@@ -38,19 +26,10 @@
       "show_generic": true,
       "show_icon_when_single": true,
       "show_sub_when_single": true,
-      "weight": 5
+      "weight": 25
     },
     "bookmarks": {
-      "entries": [
-        {
-          "keywords": [
-            "walker",
-            "github"
-          ],
-          "label": "Walker",
-          "url": "https://github.com/abenz1267/walker"
-        }
-      ],
+      "entries": [],
       "icon": "bookmark",
       "name": "bookmarks",
       "placeholder": "Bookmarks",
@@ -59,11 +38,11 @@
     },
     "calc": {
       "icon": "accessories-calculator",
-      "min_chars": 4,
+      "min_chars": 3,
       "name": "calc",
       "placeholder": "Calculator",
       "require_number": true,
-      "weight": 5
+      "weight": 1
     },
     "clipboard": {
       "avoid_line_breaks": true,
@@ -86,7 +65,8 @@
       "icon": "utilities-terminal",
       "name": "custom_commands",
       "placeholder": "Custom Commands",
-      "weight": 5
+      "weight": 5,
+      "commands": []
     },
     "dmenu": {
       "name": "dmenu",
@@ -124,6 +104,7 @@
       "placeholder": "Runner",
       "refresh": true,
       "typeahead": true,
+      "switcher_only": true,
       "weight": 5
     },
     "ssh": {
@@ -185,7 +166,7 @@
       "weight": 5
     }
   },
-  "close_when_open": false,
+  "close_when_open": true,
   "disable_click_to_close": false,
   "events": {
     "on_activate": "",
@@ -204,20 +185,7 @@
       "alternate": "alt",
       "keep_open": "shift"
     },
-    "ai": {
-      "clear_session": [
-        "ctrl x"
-      ],
-      "copy_last_response": [
-        "ctrl c"
-      ],
-      "resume_session": [
-        "ctrl r"
-      ],
-      "run_last_response": [
-        "ctrl e"
-      ]
-    },
+    "ai": {"clear_session": ["ctrl x"], "copy_last_response": ["ctrl c"], "resume_session": ["ctrl r"], "run_last_response": ["ctrl e"]},
     "close": [
       "esc"
     ],
