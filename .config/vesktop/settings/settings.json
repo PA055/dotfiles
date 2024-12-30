@@ -228,7 +228,8 @@
             "enabled": true
         },
         "GreetStickerPicker": {
-            "enabled": true
+            "enabled": true,
+            "greetMode": "Message"
         },
         "HideAttachments": {
             "enabled": true
@@ -271,7 +272,9 @@
             "showAtSymbol": true
         },
         "MessageClickActions": {
-            "enabled": true
+            "enabled": true,
+            "requireModifier": false,
+            "enableDoubleClickToReply": true
         },
         "MessageLatency": {
             "enabled": true,
@@ -420,7 +423,11 @@
         },
         "OpenInApp": {
             "enabled": true,
-            "spotify": true
+            "spotify": true,
+            "steam": true,
+            "epic": true,
+            "tidal": true,
+            "itunes": true
         },
         "OverrideForumDefaults": {
             "enabled": false
@@ -592,7 +599,8 @@
         "TypingIndicator": {
             "enabled": true,
             "includeMutedChannels": false,
-            "includeCurrentChannel": true
+            "includeCurrentChannel": true,
+            "indicatorMode": 3
         },
         "TypingTweaks": {
             "enabled": true,
@@ -692,6 +700,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1735064945078
+        "settingsSyncVersion": 1735524096093
     }
 }
