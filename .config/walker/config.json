@@ -97,14 +97,14 @@
       "weight": 5
     },
     "runner": {
-      "generic_entry": false,
+      "generic_entry": true,
       "history": true,
       "icon": "utilities-terminal",
       "name": "runner",
       "placeholder": "Runner",
       "refresh": true,
-      "typeahead": true,
-      "switcher_only": true,
+      "prefix": "$",
+      "min_chars": 1,
       "weight": 5
     },
     "ssh": {

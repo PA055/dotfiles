@@ -15,6 +15,7 @@ window#waybar {
 
 #clock,
 #workspaces,
+#submap,
 #window,
 #system,
 #custom-notification,
@@ -47,6 +48,10 @@ window#waybar {
 
 #workspaces button.urgent {
   box-shadow: inset 0 -3px rgba(189, 26, 26, 1);
+}
+
+#submap {
+  font-weight: bolder;
 }
 
 #system * {

@@ -60,6 +60,7 @@ bindkey '^[w' kill-region
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 export QT_QPA_PLATFORM="xcb"
+export EDITOR=nvim
 
 # History
 HISTSIZE=5000
@@ -81,24 +82,13 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# nnn
-n () {
-  [ "${NNNLVL:-0}" -eq 0 ] || {
-    echo "nnn is already running"
-    return
-  }
-
-  export NNN_TEMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-  export NNN_FIFO=/tmp/nnn.fifo
-
-  export NNN_PLUG='p:preview-tui;f:finder;d:fzcd;'
-
-  command nnn -H "$@"
-
-  [ ! -f "$NNN_TEMPFILE" ] || {
-    . "$NNN_TEMPFILE"
-    rm -f "$NNN_TEMPFILE" > /dev/null
-  }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # Aliases

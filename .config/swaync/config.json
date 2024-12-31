@@ -115,6 +115,11 @@
           "type": "toggle",
           "command": "sh -c 'swayosd-client --output-volume mute-toggle'",
           "update-command": "sh -c '(pactl get-sink-mute @DEFAULT_SOURCE@ | grep \"Mute: yes\") && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "type": "button",
+          "command": "sh -c 'pkill hyprpicker || hyprpicker -a > /dev/null'"
         }
       ]
     }

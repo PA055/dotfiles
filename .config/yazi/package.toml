@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "h-hg/yamb", rev = "108347b" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "hankertrix/augment-command", rev = "b923e7e" }, { use = "yazi-rs/plugins:smart-enter", rev = "71c4fc2" }]
+
+[flavor]
+deps = []

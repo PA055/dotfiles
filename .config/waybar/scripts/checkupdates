@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 
 UPDATES=$(checkupdates & yay -Qua)
-echo "{\"text\": \"$(echo -n "$UPDATES" | wc -l)\", \"tooltip\": \"$(echo -n "$UPDATES" | cut -f1 -d" " | sed -E ':a;N;$!ba;s/\r{0,1}\n/\r/g')\"}"
+echo "{\"text\": \"$((checkupdates & yay -Qua) | wc -l)\", \"tooltip\": \"$((checkupdates & yay -Qua) | cut -f1 -d" " | sed -E ':a;N;$!ba;s/\r{0,1}\n/\r/g')\"}"
+# echo "{\"text\": \"$(echo -n "$UPDATES" | wc -l)\", \"tooltip\": \"$(echo -n "$UPDATES" | cut -f1 -d" " | sed -E ':a;N;$!ba;s/\r{0,1}\n/\r/g')\"}"
+# echo "{\"text\": \"0\", \"tootip\": \"\"}"
+

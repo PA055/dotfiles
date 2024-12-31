@@ -5,7 +5,8 @@
 
   "modules-left": [
     "clock",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/submap"
   ],
   "modules-center": [
     "hyprland/window"
@@ -44,6 +45,13 @@
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
     "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null"
+  },
+
+  "hyprland/submap": {
+    "format": "--{}--",
+    "on-click": "hyprctl dispatch submap reset",
+    "tooltip": false,
+    "default-submap": ""
   },
 
 
