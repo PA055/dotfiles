@@ -1,6 +1,7 @@
 [ExtractDialog]
+1366x768 screen: Window-Maximized=true
 2 screens: Window-Maximized=true
-DirHistory[$e]=$HOME/Downloads/
+DirHistory[$e]=$HOME/Documents/,$HOME/Downloads/
 
 [General]
 LockSidebar=true
