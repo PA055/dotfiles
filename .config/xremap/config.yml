@@ -1,11 +1,11 @@
 keymap:
   - name: Right Alt + HJKL to Arrow Keys
     remap:
-      Alt_R: Reserved
-      Alt_R-h: Left
-      Alt_R-j: Down
-      Alt_R-K: Up
-      Alt_R-l: Right
+      Ctrl_R: Reserved
+      Ctrl_R-h: Left
+      Ctrl_R-j: Down
+      Ctrl_R-K: Up
+      Ctrl_R-l: Right
 
 modmap:
   - name: CapsLock to RightCtrl/Esc

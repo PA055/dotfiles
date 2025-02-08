@@ -1,228 +1,256 @@
 {
-  "activation_mode": {
-    "labels": "123456789"
-  },
-  "app_launch_prefix": "",
-  "as_window": false,
-  "disabled": [
-    "ai"
-  ],
-
-  "plugins": [],
-  
-  "builtins": {
-    "applications": {
-      "actions": {
-        "enabled": true,
-        "hide_category": false,
-        "hide_without_query": true
-      },
-      "context_aware": true,
-      "hide_actions_with_empty_query": true,
-      "name": "applications",
-      "placeholder": "Applications",
-      "prioritize_new": true,
-      "refresh": true,
-      "show_generic": true,
-      "show_icon_when_single": true,
-      "show_sub_when_single": true,
-      "weight": 25
-    },
-    "bookmarks": {
-      "entries": [],
-      "icon": "bookmark",
-      "name": "bookmarks",
-      "placeholder": "Bookmarks",
-      "switcher_only": true,
-      "weight": 5
-    },
-    "calc": {
-      "icon": "accessories-calculator",
-      "min_chars": 3,
-      "name": "calc",
-      "placeholder": "Calculator",
-      "require_number": true,
-      "weight": 1
-    },
-    "clipboard": {
-      "avoid_line_breaks": true,
-      "exec": "wl-copy",
-      "image_height": 300,
-      "max_entries": 10,
-      "name": "clipboard",
-      "placeholder": "Clipboard",
-      "switcher_only": true,
-      "weight": 5
-    },
-    "commands": {
-      "icon": "utilities-terminal",
-      "name": "commands",
-      "placeholder": "Commands",
-      "switcher_only": true,
-      "weight": 5
-    },
-    "custom_commands": {
-      "icon": "utilities-terminal",
-      "name": "custom_commands",
-      "placeholder": "Custom Commands",
-      "weight": 5,
-      "commands": []
-    },
-    "dmenu": {
-      "name": "dmenu",
-      "placeholder": "Dmenu",
-      "switcher_only": true,
-      "weight": 5
-    },
-    "emojis": {
-      "exec": "wl-copy",
-      "history": true,
-      "name": "emojis",
-      "placeholder": "Emojis",
-      "show_unqualified": false,
-      "switcher_only": true,
-      "typeahead": true,
-      "weight": 5
-    },
-    "finder": {
-      "concurrency": 8,
-      "icon": "file",
-      "ignore_gitignore": true,
-      "name": "finder",
-      "placeholder": "Finder",
-      "refresh": true,
-      "show_icon_when_single": true,
-      "switcher_only": true,
-      "use_fd": false,
-      "weight": 5
-    },
-    "runner": {
-      "generic_entry": true,
-      "history": true,
-      "icon": "utilities-terminal",
-      "name": "runner",
-      "placeholder": "Runner",
-      "refresh": true,
-      "prefix": "$",
-      "min_chars": 1,
-      "weight": 5
-    },
-    "ssh": {
-      "history": true,
-      "icon": "preferences-system-network",
-      "name": "ssh",
-      "placeholder": "SSH",
-      "refresh": true,
-      "switcher_only": true,
-      "weight": 5
-    },
-    "switcher": {
-      "name": "switcher",
-      "placeholder": "Switcher",
-      "prefix": "/",
-      "weight": 5
-    },
-    "symbols": {
-      "after_copy": "",
-      "history": true,
-      "name": "symbols",
-      "placeholder": "Symbols",
-      "switcher_only": true,
-      "typeahead": true,
-      "weight": 5
-    },
-    "websearch": {
-      "entries": [
-        {
-          "name": "Google",
-          "url": "https://www.google.com/search?q=%TERM%"
+    "activation_mode": { "labels": "123456789" },
+    "as_window": false,
+    "bar": { "entries": [] },
+    "builtins": {
+        "applications": {
+            "actions": {
+                "enabled": true,
+                "hide_category": false,
+                "hide_without_query": true
+            },
+            "context_aware": true,
+            "hide_actions_with_empty_query": true,
+            "name": "applications",
+            "placeholder": "Applications",
+            "prioritize_new": true,
+            "refresh": true,
+            "show_generic": true,
+            "show_icon_when_single": true,
+            "show_sub_when_single": true,
+            "weight": 25
         },
-        {
-          "name": "DuckDuckGo",
-          "switcher_only": true,
-          "url": "https://duckduckgo.com/?q=%TERM%"
+        "ai": {
+            "weight": 5,
+            "placeholder": "AI",
+            "name": "ai",
+            "icon": "help-browser",
+            "switcher_only": true,
+            "anthropic": { "prompts": {
+                "model": "claude-3-5-sonnet-20241022",
+                "temperature": 1,
+                "max_tokens": 1000,
+                "label": "General Assistant",
+                "prompt": "You are a helpful general assistant. Keep your answers short and precise."
+            }}
         },
-        {
-          "name": "Ecosia",
-          "switcher_only": true,
-          "url": "https://www.ecosia.org/search?q=%TERM%"
+        "bookmarks": {
+            "entries": [],
+            "icon": "bookmark",
+            "name": "bookmarks",
+            "placeholder": "Bookmarks",
+            "switcher_only": true,
+            "weight": 5
         },
-        {
-          "name": "Yandex",
-          "switcher_only": true,
-          "url": "https://yandex.com/search/?text=%TERM%"
+        "calc": {
+            "icon": "accessories-calculator",
+            "min_chars": 3,
+            "name": "calc",
+            "placeholder": "Calculator",
+            "require_number": true,
+            "weight": 1
+        },
+        "clipboard": {
+            "avoid_line_breaks": true,
+            "exec": "wl-copy",
+            "image_height": 300,
+            "max_entries": 10,
+            "name": "clipboard",
+            "placeholder": "Clipboard",
+            "switcher_only": true,
+            "weight": 5
+        },
+        "commands": {
+            "icon": "utilities-terminal",
+            "name": "commands",
+            "placeholder": "Commands",
+            "switcher_only": true,
+            "weight": 5
+        },
+        "custom_commands": {
+            "icon": "utilities-terminal",
+            "name": "custom_commands",
+            "placeholder": "Custom Commands",
+            "weight": 5,
+            "commands": [
+                {
+                    "name": "Vencord",
+                    "cmd": "sh -c \"$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)\"",
+                    "terminal": true
+                }
+            ]
+        },
+        "dmenu": {
+            "name": "dmenu",
+            "placeholder": "Dmenu",
+            "switcher_only": true,
+            "weight": 5
+        },
+        "emojis": {
+            "exec": "wl-copy",
+            "history": true,
+            "name": "emojis",
+            "placeholder": "Emojis",
+            "show_unqualified": false,
+            "switcher_only": true,
+            "typeahead": true,
+            "weight": 5
+        },
+        "finder": {
+            "concurrency": 8,
+            "icon": "file",
+            "ignore_gitignore": true,
+            "name": "finder",
+            "placeholder": "Finder",
+            "refresh": true,
+            "show_icon_when_single": true,
+            "switcher_only": true,
+            "use_fd": false,
+            "weight": 5
+        },
+        "runner": {
+            "generic_entry": true,
+            "history": true,
+            "icon": "utilities-terminal",
+            "name": "runner",
+            "placeholder": "Runner",
+            "refresh": true,
+            "prefix": "$",
+            "min_chars": 1,
+            "weight": 5
+        },
+        "ssh": {
+            "history": true,
+            "icon": "preferences-system-network",
+            "name": "ssh",
+            "placeholder": "SSH",
+            "refresh": true,
+            "switcher_only": true,
+            "weight": 5
+        },
+        "switcher": {
+            "name": "switcher",
+            "placeholder": "Switcher",
+            "prefix": "/",
+            "weight": 5
+        },
+        "symbols": {
+            "after_copy": "",
+            "history": true,
+            "name": "symbols",
+            "placeholder": "Symbols",
+            "switcher_only": true,
+            "typeahead": true,
+            "weight": 5
+        },
+        "websearch": {
+            "entries": [
+                {
+                    "name": "Google",
+                    "url": "https://www.google.com/search?q=%TERM%"
+                },
+                {
+                    "name": "DuckDuckGo",
+                    "switcher_only": true,
+                    "url": "https://duckduckgo.com/?q=%TERM%"
+                },
+                {
+                    "name": "Ecosia",
+                    "switcher_only": true,
+                    "url": "https://www.ecosia.org/search?q=%TERM%"
+                },
+                {
+                    "name": "Yandex",
+                    "switcher_only": true,
+                    "url": "https://yandex.com/search/?text=%TERM%"
+                }
+            ],
+            "icon": "applications-internet",
+            "name": "websearch",
+            "placeholder": "Websearch",
+            "weight": 5
+        },
+        "windows": {
+            "icon": "view-restore",
+            "name": "windows",
+            "placeholder": "Windows",
+            "show_icon_when_single": true,
+            "weight": 5
+        },
+        "xdph_picker": {
+            "hidden": true,
+            "weight": 5,
+            "placeholder": "Screen/Window Picker",
+            "show_sub_when_single": true,
+            "name": "xdph_picker",
+            "switcher_only": true
         }
-      ],
-      "icon": "applications-internet",
-      "name": "websearch",
-      "placeholder": "Websearch",
-      "weight": 5
     },
-    "windows": {
-      "icon": "view-restore",
-      "name": "windows",
-      "placeholder": "Windows",
-      "show_icon_when_single": true,
-      "weight": 5
-    }
-  },
-  "close_when_open": true,
-  "disable_click_to_close": false,
-  "events": {
-    "on_activate": "",
-    "on_exit": "",
-    "on_launch": "",
-    "on_query_change": "",
-    "on_selection": ""
-  },
-  "force_keyboard_focus": false,
-  "hotreload_theme": false,
-  "keys": {
-    "accept_typeahead": [
-      "tab"
-    ],
-    "activation_modifiers": {
-      "alternate": "alt",
-      "keep_open": "shift"
+    "close_when_open": true,
+    "disable_click_to_close": false,
+    "keys": {
+        "accept_typeahead": [
+            "tab"
+        ],
+        "activation_modifiers": {
+            "alternate": "alt",
+            "keep_open": "shift"
+        },
+        "ai": {"clear_session": ["ctrl x"], "copy_last_response": ["ctrl c"], "resume_session": ["ctrl r"], "run_last_response": ["ctrl e"]},
+        "close": [
+            "esc"
+        ],
+        "next": [
+            "down"
+        ],
+        "prev": [
+            "up"
+        ],
+        "remove_from_history": [
+            "shift backspace"
+        ],
+        "resume_query": [
+            "ctrl r"
+        ],
+        "toggle_exact_search": [
+            "ctrl m"
+        ],
+        "trigger_labels": "lalt"
     },
-    "ai": {"clear_session": ["ctrl x"], "copy_last_response": ["ctrl c"], "resume_session": ["ctrl r"], "run_last_response": ["ctrl e"]},
-    "close": [
-      "esc"
+    "disabled": [
+        "ai"
     ],
-    "next": [
-      "down"
-    ],
-    "prev": [
-      "up"
-    ],
-    "remove_from_history": [
-      "shift backspace"
-    ],
-    "resume_query": [
-      "ctrl r"
-    ],
-    "toggle_exact_search": [
-      "ctrl m"
-    ],
-    "trigger_labels": "lalt"
-  },
-  "list": {
-    "dynamic_sub": true,
-    "keyboard_scroll_style": "emacs",
-    "max_entries": 50,
-    "placeholder": "No Results",
-    "show_initial_entries": true,
-    "single_click": true,
-    "visibility_threshold": 20
-  },
-  "locale": "",
-  "monitor": "",
-  "search": {
-    "delay": 0,
-    "placeholder": "Search...",
-    "resume_last_query": false
-  },
-  "terminal_title_flag": "",
-  "theme": "default",
-  "timeout": 0
+    "events": {
+        "on_activate": "",
+        "on_exit": "",
+        "on_launch": "",
+        "on_query_change": "",
+        "on_selection": ""
+    },
+    "force_keyboard_focus": true,
+    "hotreload_theme": false,
+    "ignore_mouse": false,
+    "app_launch_prefix": "",
+    "list": {
+        "dynamic_sub": true,
+        "keyboard_scroll_style": "emacs",
+        "max_entries": 50,
+        "placeholder": "No Results",
+        "show_initial_entries": true,
+        "single_click": true,
+        "visibility_threshold": 20
+    },
+    "locale": "",
+    "monitor": "",
+    "plugins": [],
+    "search": {
+        "delay": 0,
+        "placeholder": "Search...",
+        "resume_last_query": false
+    },
+    "terminal": "kitty",
+    "terminal_title_flag": "",
+    "theme": "default",
+    "theme_base": [],
+    "timeout": 0
 }

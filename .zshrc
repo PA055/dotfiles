@@ -40,7 +40,6 @@ zinit light Aloxaf/fzf-tab
 # add snippets
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
 zinit snippet OMZP::common-aliases
 
 # load them
@@ -50,6 +49,8 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 bindkey -e
 bindkey '^p' history-search-backward

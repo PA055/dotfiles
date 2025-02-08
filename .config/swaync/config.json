@@ -114,7 +114,7 @@
           "label": "󰝟",
           "type": "toggle",
           "command": "sh -c 'swayosd-client --output-volume mute-toggle'",
-          "update-command": "sh -c '(pactl get-sink-mute @DEFAULT_SOURCE@ | grep \"Mute: yes\") && echo true || echo false'"
+          "update-command": "sh -c '(pactl get-sink-mute @DEFAULT_SOURCE@ | grep \"Mute: yes\") && echo false || echo true'"
         },
         {
           "label": "",

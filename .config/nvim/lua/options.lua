@@ -1,16 +1,48 @@
-require "nvchad.options"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- add yours here!
+vim.g.have_nerd_font = true
 
-local o = vim.o
-local opt = vim.opt
+vim.opt.mouse = "vi"
+vim.opt.whichwrap = "hl<>[]"
 
-o.wrap = false
-o.linebreak = true
-o.relativenumber = true
-o.number = true
-o.mouse = ""
+-- vim.schedule(function()
+--     vim.opt.clipboard = 'unnamedplus'
+-- end)
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
--- o.cursorlineopt ='both' -- to enable cursorline!
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+vim.opt.breakindent = true
+
+vim.opt.wrap = false
+vim.opt.linebreak = true
+
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.scrolloff = 10
+vim.opt.signcolumn = "yes"
+
+vim.opt.showmode = false
+-- vim.opt.cmdheight = 0 -- idk if i like this or not
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 5
+
+vim.opt.updatetime = 50
