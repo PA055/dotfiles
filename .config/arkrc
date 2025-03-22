@@ -3,7 +3,7 @@
 2 screens: Height=272
 2 screens: Width=835
 2 screens: Window-Maximized=true
-DirHistory[$e]=$HOME/Documents/Cypat_CTFs/scoreboard_scraper/,$HOME/Documents/Games/Ryujinx/Mods/,$HOME/Documents/Games/Ryujinx/,$HOME/Documents/,$HOME/Downloads/
+DirHistory[$e]=$HOME/Downloads/,$HOME/Documents/Programming/codequest/,$HOME/Documents/Cypat_CTFs/scoreboard_scraper/,$HOME/Documents/Games/Ryujinx/Mods/,$HOME/Documents/Games/Ryujinx/,$HOME/Documents/
 
 [General]
 LockSidebar=true
@@ -11,7 +11,6 @@ ShowSidebar=true
 
 [MainWindow]
 StatusBar=Disabled
-ToolBarsMovable=Disabled
 splitterSizes=392,73
 
 [Viewer]

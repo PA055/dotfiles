@@ -1,5 +1,32 @@
-[plugin]
-deps = [{ use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "h-hg/yamb", rev = "108347b" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "hankertrix/augment-command", rev = "b923e7e" }, { use = "yazi-rs/plugins:smart-enter", rev = "71c4fc2" }]
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "2559e5f"
+hash = "c9a3d0731e7d7340e2c6d6126b1f3aa3"
+
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "228a9ef"
+hash = "cdc65cfe4e60e1bf5afe5769d074fa9c"
+
+[[plugin.deps]]
+use = "h-hg/yamb"
+rev = "22af003"
+hash = "7cc42012a7c2099f80064d228feb8d44"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "9f924e3"
+hash = "2b0c33928986f126d5c5a4cac31a6b46"
+
+[[plugin.deps]]
+use = "hankertrix/augment-command"
+rev = "e676d3c"
+hash = "50edde70fad24f7b0e9922729312dbd7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "2bf70d8"
+hash = "7918aab6a71caf31b58411f789195677"
 
 [flavor]
 deps = []

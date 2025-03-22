@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
 
         remap('n', 'K', vim.lsp.buf.hover, opts "Show hover hints")
+        remap('i', '<C-k>', vim.lsp.buf.hover, opts "Show hover hints")
         remap({ 'n', 'v' }, '<leader>cf', vim.lsp.buf.format, opts "Format buffer")
 
         vim.keymap.set({ 'i', 's' }, '<Tab>', function()
@@ -24,9 +25,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
            end
          end, { expr = true })
 
-        vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
-           if vim.snippet.active({ direction = -1 }) then
-             return '<cmd>lua vim.snippet.jump(-1)<cr>'
+        vim.keymap.set({ 'i', 's' }, '<S-Tab>', function() if vim.snippet.active({ direction = -1 }) then return '<cmd>lua vim.snippet.jump(-1)<cr>'
            else
              return '<S-Tab>'
            end

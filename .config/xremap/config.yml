@@ -6,6 +6,14 @@ keymap:
       Ctrl_R-j: Down
       Ctrl_R-K: Up
       Ctrl_R-l: Right
+  - name: Fn Keys
+    remap:
+      F6: Mute
+      F7: VolumeDown
+      F8: VolumeUp
+      Mute: F6
+      VolumeDown: F7
+      VolumeUp: F8
 
 modmap:
   - name: CapsLock to RightCtrl/Esc
