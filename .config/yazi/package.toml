@@ -20,12 +20,12 @@ hash = "2b0c33928986f126d5c5a4cac31a6b46"
 
 [[plugin.deps]]
 use = "hankertrix/augment-command"
-rev = "e676d3c"
-hash = "50edde70fad24f7b0e9922729312dbd7"
+rev = "926b1d1"
+hash = "a8a1927e911080120847e813dbc39bad"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "2bf70d8"
+rev = "2730199"
 hash = "7918aab6a71caf31b58411f789195677"
 
 [flavor]
