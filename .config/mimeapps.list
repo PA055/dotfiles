@@ -1,5 +1,19 @@
 [Default Applications]
-video/mp4=firefox.desktop
+video/mp4=vlc.desktop
+application/x-executable=kali.desktop
+text/plain=nvim.desktop
+text/x-python=nvim.desktop
+x-scheme-handler/everest=/home/lufimio/.local/share/applications/Olympus.desktop
+image/jpeg=org.nomacs.ImageLounge.desktop
+image/png=org.nomacs.ImageLounge.desktop
 
 [Added Associations]
-video/mp4=firefox.desktop;
+video/mp4=mpv.desktop;firefox.desktop;vlc.desktop;
+application/x-executable=gcr-prompter.desktop;kali.desktop;
+text/plain=nvim.desktop;
+application/xml=nvim.desktop;
+text/x-python=nvim.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;
+image/png=pinta.desktop;org.nomacs.ImageLounge.desktop;
+application/x-shellscript=nvim.desktop;
+video/quicktime=vlc.desktop;

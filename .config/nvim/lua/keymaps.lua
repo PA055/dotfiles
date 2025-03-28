@@ -1,64 +1,9 @@
 local remap = vim.keymap.set
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
-    callback = function(event)
-        local function opts(desc)
-            return { buffer = event.buf, desc = "LSP: " .. desc }
-        end
-
-        remap('n', 'K', vim.lsp.buf.hover, opts "Show hover hints")
-        remap('i', '<C-k>', vim.lsp.buf.hover, opts "Show hover hints")
-        remap({ 'n', 'v' }, '<leader>cf', vim.lsp.buf.format, opts "Format buffer")
-
-        vim.keymap.set({ 'i', 's' }, '<Tab>', function()
-           if vim.snippet.active({ direction = 1 }) then
-             return '<cmd>lua vim.snippet.jump(1)<cr>'
-           else
-             return '<Tab>'
-           end
-         end, { expr = true })
-
-        vim.keymap.set({ 'i', 's' }, '<C-f>', function()
-           if vim.snippet.active({ direction = 1 }) then
-             return '<cmd>lua vim.snippet.jump(1)<cr>'
-           end
-         end, { expr = true })
-
-        vim.keymap.set({ 'i', 's' }, '<S-Tab>', function() if vim.snippet.active({ direction = -1 }) then return '<cmd>lua vim.snippet.jump(-1)<cr>'
-           else
-             return '<S-Tab>'
-           end
-         end, { expr = true })
-
-        vim.keymap.set({ 'i', 's' }, '<C-F>', function()
-           if vim.snippet.active({ direction = -1 }) then
-             return '<cmd>lua vim.snippet.jump(-1)<cr>'
-           end
-         end, { expr = true })
-
-        remap("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
-        remap("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
-        remap("n", "gi", vim.lsp.buf.implementation, opts "Go to implementation")
-        remap("n", "<leader>ch", vim.lsp.buf.signature_help, opts "Show signature help")
-        remap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
-        remap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
-
-        remap("n", "<leader>wl", function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts "List workspace folders")
-
-        remap("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
-
-        remap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
-        remap("n", "gr", vim.lsp.buf.references, opts "Show references")
-    end
-})
-
 remap('n', '<A-v>', "<C-V>", { desc = "Visual Block Mode" })
 remap('n', '<Esc>', "<Cmd>noh<CR>", { desc = "general clear highlights" })
 remap({ "i", "n", "v", "s" }, "<C-s>", "<Cmd>w<CR><Esc>", { desc = "Save file" })
-remap({ "n", "v", "s" }, "<leader>qq", "<Cmd>wa<CR><Cmd>qa<CR>", { desc = "Save and Quit all" })
+remap({ "n", "v", "s" }, "<leader>qq", "<Cmd>wqa<CR>", { desc = "Save and Quit all" })
 
 remap("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
 remap("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
@@ -100,14 +45,13 @@ remap('i', '<C-P>', '<Esc>"+pa', { desc = "Paste from register" })
 remap({ 'n', 'v' }, '<leader>y', '"+y', { desc = "Copy to system clipboard" })
 remap('n', '<leader>Y', '"+Y', { desc = "Copy to system clipboard" })
 
-remap({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to null register" })
+remap({ "n", "v" }, "<A-d>", '"_d', { desc = "Delete to null register" })
 
 remap("v", "<", "<gv")
 remap("v", ">", ">gv")
 
-remap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current word" })
-remap("n", "<leader>r", [[:%s///gI<Left><Left><Left>]], { desc = "Replace last find" })
-remap("v", "<leader>r", [[:s///gI<Left><Left><Left>]], { desc = "Replace last find" })
+remap("n", "<leader>rf", [[:%s///gI<Left><Left><Left>]], { desc = "Replace last find" })
+remap("v", "<leader>rf", [[:s///gI<Left><Left><Left>]], { desc = "Replace last find" })
 
 remap("n", "<leader>qe", ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>", { desc = "Edit macro in selected register" })
 
@@ -119,5 +63,13 @@ remap("i", "<C-Left>", "<C-o>b", { desc = "Move back 1 word" })
 remap("i", "<C-Right>", "<C-o>w", { desc = "Move forward 1 word" })
 remap("i", "<C-A-h>", "<C-o>b", { desc = "Move back 1 word" })
 remap("i", "<C-A-l>", "<C-o>w", { desc = "Move forward 1 word" })
-remap("i", "<C-Backspace>", "<Esc>dbxi", { desc = "Delete 1 word" })
-remap("i", "<C-Delete>", "<Esc>dwi", { desc = "Delete 1 word after" })
+remap("i", "<C-BS>", "<C-o>db", { desc = "Delete 1 word" })
+remap("i", "<C-Del>", "<C-o>dw", { desc = "Delete 1 word after" })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
