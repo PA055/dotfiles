@@ -9,4 +9,7 @@
 .config/clipse/clipboard_history.json
 .config/gh/hosts.yml
 .config/obs-studio/logs/
+.config/obs-studio/updates/
+.config/obs-studio/plugin_config/
 .config/obs-studio/profiler_data/
+.config/obs-studio/basic/profiles/Untitled/service.json
