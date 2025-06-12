@@ -1,2 +1,5 @@
 [PreviewAsText_text]
 markdown=4
+plain=4
+x-c%2B%2Bsrc=4
+x-cmake=4

@@ -72,6 +72,7 @@ return {
                         vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
                     end
 
+                    remap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
                     remap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                     remap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
                     remap('gt', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')

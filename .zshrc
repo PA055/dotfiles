@@ -61,7 +61,10 @@ bindkey '^[w' kill-region
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 export QT_QPA_PLATFORM="xcb"
+export VISUAL=nvim
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
+export QT_QPA_PLATFORM=wayland
 
 # History
 HISTSIZE=5000
@@ -92,9 +95,17 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# pyenv stuff
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 # Aliases
 alias vim='nvim'
 alias ls='ls --color'
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
+alias sudo='sudo '
 
 # Shell integrations
 eval "$(fzf --zsh)"

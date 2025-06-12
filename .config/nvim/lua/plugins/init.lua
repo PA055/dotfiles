@@ -15,4 +15,8 @@ return {
             require('lspconfig').jdtls.setup({})
         end
     },
+    {
+        'tpope/vim-sleuth',
+        config = function() end
+    }
 }

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if the screenshot path hint is present
+if [[ -n "$SWAYNC_SUMMARY" && "$SWAYNC_SUMMARY" == *"Screenshot saved"* ]]; then
+  # Extract the screenshot path from the hint
+  screenshot_path=$(echo "$SWAYNC_BODY" | sed -n 's/.*<i>\(.*\)<\/i>.*/\1/p')
+# Open the screenshot if the path is valid
+
+  if [[ -f "$screenshot_path" ]]; then
+    xdg-open "$screenshot_path" &
+  else
+    echo "Screenshot file not found: $screenshot_path"
+  fi
+fi

@@ -34,15 +34,19 @@
   "hide-on-action": true,
   "script-fail-notify": true,
 
-  "scripts": {},
-  "notification-visibility": {},
+  "scripts": {
+    "screenshot-open": {
+      "exec": "~/.config/swaync/scripts/screenshot-open",
+      "run-on": "action",
+      "summary": "Screenshot saved"
+    }
+  },
   "widgets": [
     "title",
     "inhibitors",
     "notifications",
     "mpris",
-    "volume",
-    "buttons-grid"
+    "volume"
   ],
   "widget-config": {
     "inhibitors": {
@@ -66,62 +70,6 @@
       "show-per-app-label": true,
       "expand-button-label": "",
       "collapse-button-label": ""
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "",
-          "type": "button",
-          "command": "sh -c 'pkill clipse || kitty -T \"{system} clipse\" -- clipse'"
-        },
-        {
-          "label": "󰍶",
-          "type": "toggle",
-          "command": "sh -c 'swaync-client -d'",
-          "update-command": "sh -c 'swaync-client -D'"
-        },
-        {
-          "label": "󰌌",
-          "type": "toggle",
-          "command": "sh -c 'pkill wvkbd-mobintl || wvkbd-mobintl -L 200'",
-          "update-command": "sh -c 'pidof wvkbd-mobintl && echo true || echo false'"
-        },
-        {
-          "label": "󰄀",
-          "type": "button",
-          "command": "hyprshot -m region"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "command": "sh -c '/home/lufimio/.config/hypr/hypr/scripts/hyprecord -m window -a \"alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink\"'",
-          "update-command": "sh -c 'pidof wl-screenrec && echo true || echo false'"
-        },
-
-        {
-          "label": "",
-          "type": "toggle",
-          "command": "sh -c '(warp-cli status | grep Connected) && warp-cli disconnect || warp-cli connect'",
-          "update-command": "sh -c '(warp-cli status | grep Connected) && echo true || echo false'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "command": "sh -c 'swayosd-client --input-volume mute-toggle'",
-          "update-command": "sh -c '(pactl get-source-mute @DEFAULT_SOURCE@ | grep \"Mute: yes\") && echo true || echo false'"
-        },
-        {
-          "label": "󰝟",
-          "type": "toggle",
-          "command": "sh -c 'swayosd-client --output-volume mute-toggle'",
-          "update-command": "sh -c '(pactl get-sink-mute @DEFAULT_SOURCE@ | grep \"Mute: yes\") && echo false || echo true'"
-        },
-        {
-          "label": "",
-          "type": "button",
-          "command": "sh -c 'pkill hyprpicker || hyprpicker -a > /dev/null'"
-        }
-      ]
     }
   }
 }

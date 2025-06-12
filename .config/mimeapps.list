@@ -6,6 +6,11 @@ text/x-python=nvim.desktop
 x-scheme-handler/everest=/home/lufimio/.local/share/applications/Olympus.desktop
 image/jpeg=org.nomacs.ImageLounge.desktop
 image/png=org.nomacs.ImageLounge.desktop
+application/zip=org.kde.ark.desktop
+image/heif=org.nomacs.ImageLounge.desktop
+application/pdf=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
 
 [Added Associations]
 video/mp4=mpv.desktop;firefox.desktop;vlc.desktop;
@@ -14,6 +19,9 @@ text/plain=nvim.desktop;
 application/xml=nvim.desktop;
 text/x-python=nvim.desktop;
 image/jpeg=org.nomacs.ImageLounge.desktop;
-image/png=pinta.desktop;org.nomacs.ImageLounge.desktop;
+image/png=gimp.desktop;pinta.desktop;org.nomacs.ImageLounge.desktop;
 application/x-shellscript=nvim.desktop;
 video/quicktime=vlc.desktop;
+application/zip=org.kde.ark.desktop;
+image/heif=org.nomacs.ImageLounge.desktop;
+application/pdf=net.fasterland.converseen.desktop;firefox.desktop;

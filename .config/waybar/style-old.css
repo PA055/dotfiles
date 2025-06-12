@@ -1,0 +1,86 @@
+@import "frappe.css";
+
+* {
+  border: none;
+  font-family: Font Awesome, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  color: @text;
+}
+
+#waybar {
+  background: transparent;
+}
+
+.modules-right * {
+  min-width: 25px;
+}
+
+#clock,
+#workspaces,
+#submap,
+#window,
+#system,
+#custom-notification,
+#device-status,
+#custom-recording,
+#privacy,
+#tray,
+#power {
+  border-radius: 15px;
+  border: 1px solid @mauve;
+  background-color: @surface0;
+  padding: 0 10px 0 10px;
+}
+
+#clock {
+  padding: 0 15px 0 15px;
+}
+
+#workspaces button {
+  border-radius: 0;
+}
+
+#workspaces button.visible {
+  box-shadow: inset 0 -3px @blue;
+}
+
+#workspaces button.active {
+  box-shadow: inset 0 -3px @rosewater;
+}
+
+#workspaces button.urgent {
+  box-shadow: inset 0 -3px @red;
+}
+
+#submap {
+  font-weight: bolder;
+}
+
+#system * {
+  padding: 0 5px 0 5px;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#pulseaudio {
+  padding: 0 7px 0 7px;
+}
+
+#custom-notification {
+  padding: 0 12px 0 8px;
+}
+
+#custom-recording {
+  color: @red;
+  padding: 0 12px 0 8px;
+}
+
+#power {
+  padding-right: 12px;
+}
