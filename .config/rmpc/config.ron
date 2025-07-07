@@ -1,0 +1,165 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+    address: "127.0.0.1:6600",
+    password: None,
+    theme: "catppuccin_mocha",
+    cache_dir: None,
+    lyrics_dir: "/home/lufimio/Music/",
+    on_song_change: None,
+    volume_step: 5,
+    max_fps: 60,
+    scrolloff: 5,
+    wrap_navigation: true,
+    enable_mouse: true,
+    enable_config_hot_reload: true,
+    status_update_interval_ms: 1000,
+    rewind_to_start_sec: None,
+    reflect_changes_to_playlist: false,
+    select_current_song_on_change: true,
+    center_current_song_on_change: true,
+    browser_song_sort: [Title, Artist, Disc, Track],
+    directories_sort: SortFormat(group_by_type: true, reverse: false),
+    album_art: (
+        method: Auto,
+        max_size_px: (width: 1200, height: 1200),
+        disabled_protocols: ["http://", "https://"],
+        vertical_align: Center,
+        horizontal_align: Center,
+    ),
+    cava: (
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 44100,
+            channels: 2,
+            sample_bits: 16,
+        ),
+    ),
+    keybinds: (
+        global: {
+            ":":       CommandMode,
+            ",":       VolumeDown,
+            ".":       VolumeUp,
+            "S":       Stop,
+            "<Tab>":   NextTab,
+            "<S-Tab>": PreviousTab,
+            "1":       SwitchToTab("Song"),
+            "2":       SwitchToTab("Directories"),
+            "3":       SwitchToTab("Playlists"),
+            "4":       SwitchToTab("Search"),
+            "q":       Quit,
+            ">":       NextTrack,
+            "<":       PreviousTrack,
+            "p":       TogglePause,
+
+            "z":       ToggleRepeat,
+            "x":       ToggleRandom,
+            "c":       ToggleConsume,
+            "v":       ToggleSingle,
+
+            "?":       ShowHelp,
+            "u":       Update,
+            "U":       Rescan,
+
+            "I":       ShowCurrentSongInfo,
+            "O":       ShowOutputs,
+            "P":       ShowDecoders,
+            "R":       AddRandom,
+        },
+        navigation: {
+            "k":         Up,
+            "j":         Down,
+            "h":         Left,
+            "l":         Right,
+            "<Up>":      Up,
+            "<Down>":    Down,
+            "<Left>":    Left,
+            "<Right>":   Right,
+
+            "<C-k>":     PaneUp,
+            "<C-j>":     PaneDown,
+            "<C-h>":     PaneLeft,
+            "<C-l>":     PaneRight,
+
+            "<C-u>":     UpHalf,
+            "<C-d>":     DownHalf,
+
+            "/":         EnterSearch,
+            "n":         NextResult,
+            "N":         PreviousResult,
+
+            "a":         Add,
+            "A":         AddAll,
+            "i":         Insert,
+            "I":         InsertAll,
+
+            "K":         MoveUp,
+            "J":         MoveDown,
+            "<A-k>":     MoveUp,
+            "<A-j>":     MoveDown,
+
+            "g":         Top,
+            "G":         Bottom,
+            "<Space>":   Select,
+            "<C-Space>": InvertSelection,
+            "<CR>":      Confirm,
+            "<C-c>":     Close,
+            "<Esc>":     Close,
+            "r":         Rename,
+            "D":         Delete,
+            "B":         ShowInfo,
+        },
+        queue: {
+            "D":       DeleteAll,
+            "<CR>":    Play,
+            "<C-s>":   Save,
+            "a":       AddToPlaylist,
+            "d":       Delete,
+            "C":       JumpToCurrent,
+            "X":       Shuffle,
+        },
+    ),
+    search: (
+        case_sensitive: false,
+        mode: Contains,
+        tags: [
+        (value: "any",         label: "Any Tag"),
+        (value: "artist",      label: "Artist"),
+        (value: "album",       label: "Album"),
+        (value: "albumartist", label: "Album Artist"),
+        (value: "title",       label: "Title"),
+        (value: "filename",    label: "Filename"),
+        (value: "genre",       label: "Genre"),
+        ],
+    ),
+    tabs: [
+        (
+            name: "Current",
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "60%", pane: Split(
+                        direction: Horizontal,
+                        panes: [
+                            (size: "35%", pane: Pane(AlbumArt)),
+                            (size: "65%", pane: Pane(Queue)),
+                        ]
+                    )),
+                    (size: "40%", borders: "ALL", pane: Split(
+                        direction: Horizontal,
+                        panes: [
+                            (size: "35%", pane: Pane(Lyrics)),
+                            (size: "65%", pane: Pane(Cava))
+                        ]
+                    ))
+                ]
+            )
+        ),
+        (name: "Music", pane: Pane(Directories)),
+        (name: "Playlists", pane: Pane(Playlists)),
+        (name: "Search", pane: Pane(Search)),
+    ],
+)
+

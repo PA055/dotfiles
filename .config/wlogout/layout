@@ -23,10 +23,10 @@
     "keybind" : "s"
 }
 {
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
+    "label" : "windows",
+    "action" : "grub-reboot 1 && systemctl reboot",
+    "text" : "Windows",
+    "keybind" : "w"
 }
 {
     "label" : "reboot",

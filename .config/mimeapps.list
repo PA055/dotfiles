@@ -1,5 +1,4 @@
 [Default Applications]
-video/mp4=vlc.desktop
 application/x-executable=kali.desktop
 text/plain=nvim.desktop
 text/x-python=nvim.desktop
@@ -11,9 +10,9 @@ image/heif=org.nomacs.ImageLounge.desktop
 application/pdf=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+inode/directory=thunar.desktop
 
 [Added Associations]
-video/mp4=mpv.desktop;firefox.desktop;vlc.desktop;
 application/x-executable=gcr-prompter.desktop;kali.desktop;
 text/plain=nvim.desktop;
 application/xml=nvim.desktop;
@@ -24,4 +23,5 @@ application/x-shellscript=nvim.desktop;
 video/quicktime=vlc.desktop;
 application/zip=org.kde.ark.desktop;
 image/heif=org.nomacs.ImageLounge.desktop;
-application/pdf=net.fasterland.converseen.desktop;firefox.desktop;
+application/pdf=koodo-reader.desktop;net.fasterland.converseen.desktop;firefox.desktop;
+video/mp4=mpv.desktop;

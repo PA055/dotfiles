@@ -38,8 +38,8 @@ button:hover {
     background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
 }
 
-#suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+#windows {
+    background-image: image(url("/home/lufimio/.config/wlogout/icons/windows.png"), url("/home/lufimio/.config/wlogout/icons/windows.png"));
 }
 
 #hibernate {
