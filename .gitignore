@@ -13,3 +13,4 @@
 .config/obs-studio/plugin_config/
 .config/obs-studio/profiler_data/
 .config/obs-studio/basic/profiles/Untitled/service.json
+.config/quickshell/.qmlls.ini

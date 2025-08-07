@@ -1,0 +1,274 @@
+{
+  "layer": "top",
+  "margin-top": 3,
+  "spacing": 10,
+
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces",
+    // "niri/workspaces",
+    "hyprland/submap"
+  ],
+  "modules-center": [
+    "mpris",
+    "hyprland/window"
+    // "niri/window",
+  ],
+  "modules-right": [
+    "group/system",
+    "custom/recording",
+    "privacy",
+    //"custom/privacy",
+    "tray",
+    "custom/notification",
+    "group/power"
+  ],
+
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%I:%M:%S %p}",
+    "format-alt": "{:%a %b %d, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": -1,
+      "format": { "today": "<span color='#ff6699'><b><u>{}</u></b></span>" }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-middle": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null"
+  },
+
+  "niri/workspaces": {
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+  },
+
+  "hyprland/submap": {
+    "format": "--{}--",
+    "on-click": "hyprctl dispatch submap reset",
+    "tooltip": false,
+    "default-submap": ""
+  },
+
+
+  "mpris": {
+    "dynamic-order": ["title", "artist"],
+    "tooltip-format": "{position} / {length}",
+    "ignored-players": [
+      "firefox",
+      "chrome"
+    ],
+    "format": "",
+    "format-playing": " {dynamic}",
+    "format-paused": "",
+    "format-stopped": ""
+  },
+
+  "hyprland/window": {
+    "rewrite": {
+      "[{]system[}] (.*)": "$1",
+      "": "Desktop"
+    },
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20,
+    "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null",
+    "on-click": "walker"
+  },
+
+  "niri/window": {
+    "rewrite": {
+      "[{]system[}] (.*)": "$1",
+      "": "Desktop"
+    },
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20,
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
+    "on-click": "walker"
+  },
+
+
+  "group/system": {
+    "orientation": "inherit",
+    "modules": [
+      "network",
+      "bluetooth",
+      "battery",
+      "pulseaudio",
+      "custom/arch-updates"
+    ]
+  },
+
+  "network": {
+    "format": "󰤫",
+    "format-ethernet": "󰈁",
+    "format-wifi": "{icon}",
+    "format-disconnected": "󰤮",
+    "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+    "on-click-middle": "kitty -T '{system} nmtui' -- nmtui",
+    "tooltip-format": "{essid}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "󰂯",
+    "format-connected": "󰂯 {num_connections}",
+    "on-click-middle": "kitty -T '{system} bluetui' -- bluetui",
+    "tooltip-format": "{status}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} 󰥉 {device_battery_percentage}%"
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "full": 100,
+      "normal": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-charging": "{icon}󱐋",
+    "format-plugged": "{icon}󱐋",
+    "format-critical": "󰂃",
+    "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+    "tooltip-format": "{capacity}% - {timeTo}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [ "󰕿", "󰖀", "󰖀", "󰕾", "󰕾" ],
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "hands-free": "󰋋",
+      "car": "",
+      "phone": ""
+    },
+    "scroll-step": 5,
+    "on-click": "swayosd-client --output-volume mute-toggle",
+    "on-click-middle": "pavucontrol",
+    "ignored-sinks": [ "Easy Effects Sink" ]
+  },
+
+  "custom/arch-updates": {
+    "exec": "~/.config/waybar/scripts/checkupdates",
+    "return-type": "json",
+    "interval": 3600,
+    "signal": 8,
+    "format": "󰣇 {}",
+    "on-click": "kitty --hold -T '{system} yay -Syu' -- yay -Syu && pkill -RTMIN+8 waybar",
+    "on-click-middle": "pkill -RTMIN+8 waybar"
+  },
+  
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "on-click-middle": "swaync-client -C -sw",
+    "escape": true
+  },
+
+
+  "custom/recording": {
+    "format": "{}",
+    "tooltip-format": "Recording",
+    "signal": 9,
+    "exec": "pidof wl-screenrec > /dev/null && echo ''",
+    "interval": 1,
+    "on-click": "~/.config/hypr/hypr/scripts/hyprecord && pkill -RTMIN+9 waybar"
+  },
+
+  "custom/privacy": {
+    "format": ""
+  },
+
+  "privacy": {
+    "icon-spacing": 5,
+    "icon-size": 14,
+    "modules": [
+      { "type": "screenshare", "tooltip": false },
+      { "type": "audio-in", "tooltip": false }
+    ]
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 5
+  },
+
+  
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "power-menu",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/shutdown",
+      "custom/reboot",
+      "custom/lock"
+    ]
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip-format": "Power Menu"
+  },
+
+  "custom/shutdown": {
+    "format": "",
+    "on-double-click": "shutdown now",
+    "tooltip-format": "Shutdown"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "on-double-click": "reboot",
+    "tooltip-format": "Reboot"
+  },
+
+  "custom/lock": {
+    "format": "󰌾",
+    "on-click": "pidof hyprlock || hyprlock",
+    "tooltip-format": "Lock"
+  }
+}

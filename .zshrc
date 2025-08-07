@@ -52,6 +52,7 @@ zinit cdreplay -q
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
+# keybinds
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -59,7 +60,6 @@ bindkey '^[w' kill-region
 
 # Enviorment Variables
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
 export QT_QPA_PLATFORM="xcb"
 export VISUAL=nvim
 export EDITOR=nvim
@@ -111,7 +111,9 @@ alias sudo='sudo '
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-export PATH=$PATH:/home/lufimio/.local/bin:/home/lufimio/.spicetify
+# Path Mods
+export PATH="$HOME/gems/bin:$PATH"
+export PATH="$PATH:/home/lufimio/.local/bin:/home/lufimio/.spicetify"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -126,3 +128,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -d ${HOME}/.luarocks/bin ] && {
   export PATH="${HOME}/.luarocks/bin${PATH:+:${PATH}}"
 }
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/lufimio/.dart-cli-completion/zsh-config.zsh ]] && . /home/lufimio/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

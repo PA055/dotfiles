@@ -4,7 +4,7 @@ keymap:
       Ctrl_R: Reserved
       Ctrl_R-h: Left
       Ctrl_R-j: Down
-      Ctrl_R-K: Up
+      Ctrl_R-k: Up
       Ctrl_R-l: Right
   - name: Fn Keys
     remap:

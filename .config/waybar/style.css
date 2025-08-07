@@ -8,7 +8,7 @@
 }
 
 tooltip {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-color: #27232b;
 }
 
 window#waybar {
@@ -24,6 +24,7 @@ window#waybar {
 #clock,
 #workspaces,
 #submap,
+#mpris,
 #window,
 #system,
 #custom-notification,
@@ -33,7 +34,7 @@ window#waybar {
 #pulseaudio,
 #tray,
 #power {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-color: #27232b;
 
   margin: 0px 6px;
   margin-right: 0px;
@@ -63,7 +64,7 @@ window#waybar {
   padding: 4px;
 }
 #tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-color: #27232b;
 
   margin: 3px;
   color: #d8cab8;
@@ -72,7 +73,7 @@ window#waybar {
   border-color: #27232b;
 }
 #tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-color: #27232b;
   color: #ac82e9;
   font-weight: bold;
 }

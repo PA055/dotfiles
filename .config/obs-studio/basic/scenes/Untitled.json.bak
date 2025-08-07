@@ -1,6 +1,6 @@
 {
     "DesktopAudioDevice1": {
-        "prev_ver": 520093699,
+        "prev_ver": 520159234,
         "name": "Desktop Audio",
         "uuid": "c5934800-3037-4017-8072-9c261da3deed",
         "id": "pulse_output_capture",
@@ -31,7 +31,7 @@
         "private_settings": {}
     },
     "AuxAudioDevice1": {
-        "prev_ver": 520093699,
+        "prev_ver": 520159234,
         "name": "Mic/Aux",
         "uuid": "86efa205-60aa-4c14-8bff-d14c4f1a3f69",
         "id": "pulse_input_capture",
@@ -74,7 +74,7 @@
     "name": "Untitled",
     "sources": [
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Screen Capture (PipeWire)",
             "uuid": "d1ea9b33-5fc9-4e6f-9ce1-a1f93e8a1e1f",
             "id": "pipewire-screen-capture-source",
@@ -100,7 +100,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Main Monitor",
             "uuid": "272c60b5-3e46-40b6-9511-3d229404b54b",
             "id": "scene",
@@ -356,10 +356,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "External Monitor",
             "uuid": "d0884708-3c1b-4fee-97dd-516d1b19f16b",
             "id": "scene",
@@ -501,10 +502,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Screen Capture (PipeWire) 2",
             "uuid": "70afd9ce-2578-4752-8e89-ff9a40a7d732",
             "id": "pipewire-screen-capture-source",
@@ -530,7 +532,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Chat External",
             "uuid": "37907bf0-6d12-47a8-a5db-5a0555c86b6e",
             "id": "browser_source",
@@ -564,7 +566,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Celeste Input",
             "uuid": "c6681528-82a7-4ba7-ae99-768983dbee98",
             "id": "input-overlay",
@@ -592,13 +594,13 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 520159234,
             "name": "Screen Capture Celeste",
             "uuid": "2645f565-535d-45e9-8bcc-c73da0e68a65",
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "082e7974-d2fe-4b23-9d90-495cfe1bb3d5"
+                "RestoreToken": "44d8e372-dc82-4fcb-958a-0ea2a879a29e"
             },
             "mixers": 0,
             "sync": 0,
@@ -644,13 +646,17 @@
     ],
     "transitions": [],
     "saved_projectors": [],
+    "canvases": [],
     "current_transition": "Fade",
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": 0,
+    "scaling_level": -29,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
+    "virtual-camera": {
+        "type2": 3
+    },
     "modules": {
         "scripts-tool": [],
         "output-timer": {

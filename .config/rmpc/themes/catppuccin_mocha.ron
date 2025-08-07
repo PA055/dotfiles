@@ -51,12 +51,12 @@
         //     ),
         //     width: "20%",
         // ),
-        // (
-        //     prop: (kind: Sticker("playCount"), default: (kind: Text("0"))),
-        //     width: "9",
-        //     alignment: Right,
-        //     label: "Playcount"
-        // ),
+        (
+            prop: (kind: Sticker("playCount"), default: (kind: Text("0"))),
+            width: "9",
+            alignment: Right,
+            label: "Playcount"
+        ),
         (
             prop: (kind: Property(Duration),
                 default: (kind: Text("-"))
@@ -140,15 +140,9 @@
     browser_song_format: [
         (
             kind: Group([
-                (kind: Property(Track)), // track #
-                (kind: Text(" ")),
-            ])
-        ),
-        (
-            kind: Group([
-                (kind: Property(Artist)),
-                (kind: Text(" - ")),
                 (kind: Property(Title)),
+                (kind: Text(" - ")),
+                (kind: Property(Artist)),
             ]),
             default: (kind: Property(Filename))
         ),

@@ -5,11 +5,11 @@
 
   "modules-left": [
     "clock",
-    "hyprland/workspaces",
-    "hyprland/submap"
+    "niri/workspaces"
   ],
   "modules-center": [
-    "hyprland/window"
+    "mpris",
+    "niri/window"
   ],
   "modules-right": [
     "group/system",
@@ -47,6 +47,11 @@
     "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null"
   },
 
+  "niri/workspaces": {
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+  },
+
   "hyprland/submap": {
     "format": "--{}--",
     "on-click": "hyprctl dispatch submap reset",
@@ -55,6 +60,18 @@
   },
 
 
+  "mpris": {
+    "dynamic-order": ["title", "artist"],
+    "tooltip-format": "{position} / {length}",
+    "ignored-players": [
+      "firefox",
+      "chrome"
+    ],
+    "format": "",
+    "format-playing": " {dynamic}",
+    "format-paused": "",
+    "format-stopped": ""
+  },
 
   "hyprland/window": {
     "rewrite": {
@@ -66,6 +83,19 @@
     "icon-size": 20,
     "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
     "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null",
+    "on-click": "walker"
+  },
+
+  "niri/window": {
+    "rewrite": {
+      "[{]system[}] (.*)": "$1",
+      "": "Desktop"
+    },
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20,
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
     "on-click": "walker"
   },
 
@@ -118,7 +148,7 @@
     "format-plugged": "{icon}󱐋",
     "format-critical": "󰂃",
     "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-    "tooltip-format": "{capacity} - {timeTo}"
+    "tooltip-format": "{capacity}% - {timeTo}"
   },
 
   "pulseaudio": {

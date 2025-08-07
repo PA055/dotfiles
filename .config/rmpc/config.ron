@@ -7,7 +7,7 @@
     theme: "catppuccin_mocha",
     cache_dir: None,
     lyrics_dir: "/home/lufimio/Music/",
-    on_song_change: None,
+    on_song_change: ["~/.config/rmpc/utils/increment_play_count"],
     volume_step: 5,
     max_fps: 60,
     scrolloff: 5,
@@ -39,27 +39,31 @@
     ),
     keybinds: (
         global: {
-            ":":       CommandMode,
             ",":       VolumeDown,
             ".":       VolumeUp,
-            "S":       Stop,
+            "}":       SeekForward,
+            "{":       SeekBack,
+
+            "?":       ShowHelp,
+            ":":       CommandMode,
+            "q":       Quit,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Song"),
             "2":       SwitchToTab("Directories"),
             "3":       SwitchToTab("Playlists"),
             "4":       SwitchToTab("Search"),
-            "q":       Quit,
+
             ">":       NextTrack,
             "<":       PreviousTrack,
             "p":       TogglePause,
+            "S":       Stop,
 
             "z":       ToggleRepeat,
             "x":       ToggleRandom,
             "c":       ToggleConsume,
             "v":       ToggleSingle,
 
-            "?":       ShowHelp,
             "u":       Update,
             "U":       Rescan,
 
