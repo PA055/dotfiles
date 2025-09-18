@@ -2,5 +2,5 @@ import Quickshell
 import qs.modules.bar
 
 ShellRoot {
-    Bar {}
+    LazyLoader { active: true; component: Bar{} }
 }
