@@ -7,7 +7,7 @@ if [[ -n "$SWAYNC_SUMMARY" && "$SWAYNC_SUMMARY" == *"Screenshot saved"* ]]; then
 # Open the screenshot if the path is valid
 
   if [[ -f "$screenshot_path" ]]; then
-    xdg-open "$screenshot_path" &
+    swappy -f "$screenshot_path" &
   else
     echo "Screenshot file not found: $screenshot_path"
   fi

@@ -1,0 +1,9 @@
+action = [type, copy]
+files = [emojis, math, kaomoji]
+skin-tone = neutral
+max-recent = 0
+hidden-descriptions = True
+selector-args = "-config ~/.config/rofi/grid.rasi"
+selector = "rofi"
+clipboarder = "wl-copy"
+typer = "ydotool"

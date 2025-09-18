@@ -2,10 +2,10 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "127.0.0.1:6600",
+    address: "/home/lufimio/.mpd/socket",
     password: None,
     theme: "catppuccin_mocha",
-    cache_dir: None,
+    cache_dir: "/home/lufimio/.cache/rmpc/",
     lyrics_dir: "/home/lufimio/Music/",
     on_song_change: ["~/.config/rmpc/utils/increment_play_count"],
     volume_step: 5,
@@ -67,9 +67,7 @@
             "u":       Update,
             "U":       Rescan,
 
-            "I":       ShowCurrentSongInfo,
-            "O":       ShowOutputs,
-            "P":       ShowDecoders,
+            "!":       ShowCurrentSongInfo,
             "R":       AddRandom,
         },
         navigation: {
@@ -94,10 +92,34 @@
             "n":         NextResult,
             "N":         PreviousResult,
 
-            "a":         Add,
-            "A":         AddAll,
-            "i":         Insert,
-            "I":         InsertAll,
+            "a":         AddOptions(kind: Action(all: false, autoplay: None, position: EndOfQueue)),
+            "A":         AddOptions(kind: Action(all: true, autoplay: None, position: EndOfQueue)),
+            "i":         AddOptions(kind: Action(all: false, autoplay: None, position: AfterCurrentSong)),
+            "I":         AddOptions(kind: Action(all: true, autoplay: None, position: AfterCurrentSong)),
+            "o":         AddOptions(kind: Modal([
+                            ("Start of queue and play", (all: false, autoplay: HoveredOrFirst, position: StartOfQueue)),
+                            ("Start of queue", (all: false, autoplay: None, position: StartOfQueue)),
+                            ("End of queue and play", (all: false, autoplay: HoveredOrFirst, position: EndOfQueue)),
+                            ("End of queue", (all: false, autoplay: None, position: EndOfQueue)),
+                            ("Before current song and play", (all: false, autoplay: HoveredOrFirst, position: BeforeCurrentSong)),
+                            ("Before current song", (all: false, autoplay: None, position: BeforeCurrentSong)),
+                            ("After current song and play", (all: false, autoplay: HoveredOrFirst, position: AfterCurrentSong)),
+                            ("After current song", (all: false, autoplay: None, position: AfterCurrentSong)),
+                            ("Replace queue and play", (all: false, autoplay: HoveredOrFirst, position: Replace)),
+                            ("Replace queue", (all: false, autoplay: None, position: Replace)),
+                        ])),
+            "O":         AddOptions(kind: Modal([
+                            ("Start of queue and play", (all: true, autoplay: HoveredOrFirst, position: StartOfQueue)),
+                            ("Start of queue", (all: true, autoplay: None, position: StartOfQueue)),
+                            ("End of queue and play", (all: true, autoplay: HoveredOrFirst, position: EndOfQueue)),
+                            ("End of queue", (all: true, autoplay: None, position: EndOfQueue)),
+                            ("Before current song and play", (all: true, autoplay: HoveredOrFirst, position: BeforeCurrentSong)),
+                            ("Before current song", (all: true, autoplay: None, position: BeforeCurrentSong)),
+                            ("After current song and play", (all: true, autoplay: HoveredOrFirst, position: AfterCurrentSong)),
+                            ("After current song", (all: true, autoplay: None, position: AfterCurrentSong)),
+                            ("Replace queue and play", (all: true, autoplay: HoveredOrFirst, position: Replace)),
+                            ("Replace queue", (all: true, autoplay: None, position: Replace)),
+                        ])),
 
             "K":         MoveUp,
             "J":         MoveDown,

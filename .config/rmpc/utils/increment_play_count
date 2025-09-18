@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 
-sticker=$(rmpc sticker get "$FILE" "playCount" | jq -r '.value')
-if [ -z "$sticker" ]; then
-    rmpc sticker set "$FILE" "playCount" "1"
-else
-    rmpc sticker set "$FILE" "playCount" "$((sticker + 1))"
+sticker=$(rmpc sticker get "$PREV_SONG" "playCount" | jq -r '.value')
+song_duration=$(rmpc song --path "$PREV_SONG" | jq -r '.duration.secs')
+if (( $(echo "$PREV_ELAPSED / $song_duration > 0.75" | bc -l) )); then
+    if [ -z "$sticker" ]; then
+        rmpc sticker set "$PREV_SONG" "playCount" "1"
+    else
+        rmpc sticker set "$PREV_SONG" "playCount" "$((sticker + 1))"
+    fi
 fi

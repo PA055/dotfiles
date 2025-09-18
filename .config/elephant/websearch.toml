@@ -1,0 +1,13 @@
+[[entries]]
+name = "DuckDuckGo"
+url = "https://duckduckgo.com/?q=%TERM%"
+prefix = "ddg"
+default = true
+icon = "duckduckgo"
+
+[[entries]]
+name = "Google"
+url = "https://www.google.com/search?q=%TERM%"
+prefix = "gs"
+default = false
+icon = "google"

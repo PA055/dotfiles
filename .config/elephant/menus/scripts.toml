@@ -1,0 +1,20 @@
+name = "scripts"
+name_pretty = "Scripts"
+icon = "text-x-script"
+global_search = true
+hide_from_provider_list = false
+
+[[entries]]
+text = "Vencord"
+icon = "vencord"
+action = "kitty sh -c \"$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)\""
+
+[[entries]]
+text = "Connect Audio Output"
+icon = "audio-volume-high"
+cmd = "bash /home/lufimio/.config/scripts/connect_bluetooth_device.sh"
+
+[[builtins.custom_commands.commands]]
+text = "Switch Application Output"
+icon = "audio-volume-high"
+cmd = "bash /home/lufimio/.config/scripts/swap_application_output.sh"

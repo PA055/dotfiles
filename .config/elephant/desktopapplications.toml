@@ -1,0 +1,4 @@
+show_actions = true
+show_generic = false
+show_actions_without_query = false
+history = true

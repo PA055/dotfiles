@@ -8,14 +8,6 @@ return {
         opts = {}
     },
     {
-        'nvim-java/nvim-java',
-        priority = 10,
-        config = function()
-            require('java').setup()
-            require('lspconfig').jdtls.setup({})
-        end
-    },
-    {
         'tpope/vim-sleuth',
         config = function() end
     }

@@ -1,3 +1,8 @@
+modmap:
+  - name: CapsLock to RightCtrl/Esc
+    remap:
+      CapsLock: Ctrl_R
+
 keymap:
   - name: Right Alt + HJKL to Arrow Keys
     remap:
@@ -14,11 +19,14 @@ keymap:
       Mute: F6
       VolumeDown: F7
       VolumeUp: F8
-
-modmap:
-  - name: CapsLock to RightCtrl/Esc
+  - name: CapsLock + HJKL → Arrow Keys
     remap:
-      CapsLock:
-        held: Ctrl_R
-        alone: Esc
-        alone_timeout: 500
+      CapsLock-h: Left
+      CapsLock-j: Down
+      CapsLock-k: Up
+      CapsLock-l: Right
+
+  - name: CapsLock + Left/Right → Home/End
+    remap:
+      CapsLock-Left: Home
+      CapsLock-Right: End

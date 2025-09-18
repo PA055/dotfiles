@@ -1,41 +1,70 @@
--- You can configure your bookmarks by lua language
-local bookmarks = {}
+-- You can configure your bookmarks using simplified syntax
+local bookmarks = {
+  { tag = "Home", path = "~", key = "h" },
+  { tag = "Documents", path = "~/Documents", key = "d" },
+  { tag = "Downloads", path = "~/Downloads", key = "D" },
+  { tag = "Pictures", path = "~/Pictures/", key = "p" },
+  { tag = "Videos", path = "~/Videos/", key = "r" },
+  { tag = "Music", path = "~/Music/", key = "m" },
+  { tag = "Dotfiles", path = "~/dotfiles/", key = "c" },
+  { tag = ".config", path = "~/.config/", key = "C" },
+  { tag = "Root", path = "/", key = "/" },
+  { tag = "etc", path = "/etc/", key = "e" },
+}
 
-local path_sep = package.config:sub(1, 1)
-local home_path = ya.target_family() == "windows" and os.getenv("USERPROFILE") or os.getenv("HOME")
+
+-- Windows-specific bookmarks
 if ya.target_family() == "windows" then
+  local home_path = os.getenv("USERPROFILE")
   table.insert(bookmarks, {
     tag = "Scoop Local",
-    
-    path = (os.getenv("SCOOP") or home_path .. "\\scoop") .. "\\",
+    path = os.getenv("SCOOP") or (home_path .. "\\scoop"),
     key = "p"
   })
   table.insert(bookmarks, {
     tag = "Scoop Global",
-    path = (os.getenv("SCOOP_GLOBAL") or "C:\\ProgramData\\scoop") .. "\\",
+    path = os.getenv("SCOOP_GLOBAL") or "C:\\ProgramData\\scoop",
     key = "P"
   })
 end
-table.insert(bookmarks, {
-  tag = "Home",
-  path = home_path .. path_sep,
-  key = "h"
-})
 
-require("yamb"):setup {
-  -- Optional, the path ending with path seperator represents folder.
+require("whoosh"):setup {
+  -- Configuration bookmarks (cannot be deleted through plugin)
   bookmarks = bookmarks,
-  -- Optional, recieve notification everytime you jump.
-  jump_notify = true,
-  -- Optional, the cli of fzf.
-  cli = "fzf",
-  -- Optional, a string used for randomly generating keys, where the preceding characters have higher priority.
-  keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  -- Optional, the path of bookmarks
-  path = (ya.target_family() == "windows" and os.getenv("APPDATA") .. "\\yazi\\config\\bookmark") or
-        (os.getenv("HOME") .. "/.config/yazi/bookmark"),
-}
 
+  -- Notification settings
+  jump_notify = false,
+
+  -- Key generation for auto-assigning bookmark keys
+  keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+  -- File path for storing user bookmarks
+  path = (ya.target_family() == "windows" and os.getenv("APPDATA") .. "\\yazi\\config\\bookmark") or
+         (os.getenv("HOME") .. "/.config/yazi/bookmark"),
+
+  -- Path truncation in navigation menu
+  path_truncate_enabled = false,                        -- Enable/disable path truncation
+  path_max_depth = 3,                                   -- Maximum path depth before truncation
+
+  -- Path truncation in fuzzy search (fzf)
+  fzf_path_truncate_enabled = false,                    -- Enable/disable path truncation in fzf
+  fzf_path_max_depth = 5,                               -- Maximum path depth before truncation in fzf
+
+  -- Long folder name truncation
+  path_truncate_long_names_enabled = false,             -- Enable in navigation menu
+  fzf_path_truncate_long_names_enabled = false,         -- Enable in fzf
+  path_max_folder_name_length = 20,                     -- Max length in navigation menu
+  fzf_path_max_folder_name_length = 20,                 -- Max length in fzf
+
+  -- History directory settings
+  history_size = 10,                                    -- Number of directories in history (default 10)
+  history_fzf_path_truncate_enabled = false,            -- Enable/disable path truncation by depth for history
+  history_fzf_path_max_depth = 5,                       -- Maximum path depth before truncation for history (default 5)
+  history_fzf_path_truncate_long_names_enabled = false, -- Enable/disable long folder name truncation for history
+  history_fzf_path_max_folder_name_length = 30,         -- Maximum length for folder names in history (default 30)
+}
 require("smart-enter"):setup {
 	open_multi = true,
 }
+
+require("recycle-bin"):setup()
