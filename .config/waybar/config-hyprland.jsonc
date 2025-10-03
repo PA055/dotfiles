@@ -86,7 +86,7 @@
     "icon-size": 20,
     "on-scroll-up": "hyprctl dispatch workspace r-1 > /dev/null",
     "on-scroll-down": "hyprctl dispatch workspace r+1 > /dev/null",
-    "on-click": "walker"
+    "on-click": "sh -c 'vicinae vicinae://toggle || pkill rofi || rofi -show drun'"
   },
 
   "niri/window": {

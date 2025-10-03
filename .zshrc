@@ -106,6 +106,8 @@ alias ls='ls --color'
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'
 alias sudo='sudo '
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Shell integrations
 eval "$(fzf --zsh)"

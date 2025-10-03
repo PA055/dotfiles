@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # options=$(echo "Speaker";bluetoothctl devices | grep -P '^Device' | awk '{ print $3 }')
-choice=$(echo -e "Speaker\nJBL LIVE FREE 2 TWS\nWH-CH720N" | walker -d -p "Speaker to Connect")
+choice=$(echo -e "Speaker\nJBL LIVE FREE 2 TWS\nWH-CH720N" | dmenu -p "Speaker to Connect")
 
 case $choice in
     "Speaker")

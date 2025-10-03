@@ -1,6 +1,6 @@
 [user]
 	email = praful.adiga@gmail.com
-	name = PA055
+	name = Praful Adiga
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
@@ -16,3 +16,14 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[core]
+	editor = vim
+[sendemail]
+	from = praful.adiga@gmail.com
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = praful.adiga@gmail.com
+	suppresscc = self
+[credential]
+	helper = store
