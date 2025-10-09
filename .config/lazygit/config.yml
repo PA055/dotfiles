@@ -324,7 +324,7 @@ customCommands:
     loadingText: "syncing..."
   - command: "git commit -m '{{ .Form.Type }}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}: {{ .Form.Emoji }} {{ .Form.Message }} \n\n{{ if .Form.Description }}{{ .Form.Description }}{{ end }}'"
     context: "global"
-    key: "c"
+    key: "C"
     description: "Create a new Conventional Commit"
     loadingText: "Creating commit..."
     prompts:
@@ -480,7 +480,7 @@ keybinding:
     recentRepos: <enter>
     allBranchesLogGraph: a
   files:
-    commitChanges: C
+    commitChanges: c
     commitChangesWithoutHook: w
     amendLastCommit: A
     commitChangesWithEditor: <c-e>
