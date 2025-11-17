@@ -18,6 +18,6 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "catppuccin-frappe" } },
+  install = { colorscheme = { "onedarkpro" } },
   checker = { enabled = true, notify = false },
 })

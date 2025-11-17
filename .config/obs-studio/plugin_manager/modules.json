@@ -11,5 +11,16 @@
             "vkcapture-source"
         ],
         "version": ""
+    },
+    {
+        "display_name": "",
+        "enabled": true,
+        "encoders": [],
+        "id": "",
+        "module_name": "libobs-livesplit-one",
+        "outputs": [],
+        "services": [],
+        "sources": [],
+        "version": ""
     }
 ]

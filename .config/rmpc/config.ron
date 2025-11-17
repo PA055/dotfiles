@@ -136,6 +136,7 @@
             "r":         Rename,
             "D":         Delete,
             "B":         ShowInfo,
+            "R":         Rate(),
         },
         queue: {
             "D":       DeleteAll,

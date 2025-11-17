@@ -54,15 +54,27 @@
         (
             prop: (kind: Sticker("playCount"), default: (kind: Text("0"))),
             width: "9",
-            alignment: Right,
+            alignment: Center,
             label: "Playcount"
+        ),
+        (
+            prop: (kind: Sticker("rating"), default: (kind: Text("-"))),
+            width: "6",
+            alignment: Center,
+            label: "Rating"
+        ),
+        (
+            prop: (kind: Sticker("like"), default: (kind: Text("-"))),
+            width: "5",
+            alignment: Center,
+            label: "Liked"
         ),
         (
             prop: (kind: Property(Duration),
                 default: (kind: Text("-"))
             ),
             width: "10%",
-            alignment: Right,
+            alignment: Center,
         ),
     ],
     components: {
@@ -93,7 +105,10 @@
     header: (
         rows: [
             (
-                left: [],
+                left: [
+                    (kind: Text("Remaining Queue: ")),
+                    (kind: Property(Status(QueueTimeRemaining())))
+                ],
                 center: [
                     (kind: Property(Song(Title)), style: (modifiers: "Bold"),
                         default: (kind: Text("No Song"), style: (modifiers: "Bold"))

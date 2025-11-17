@@ -1,6 +1,6 @@
 {
     "DesktopAudioDevice1": {
-        "prev_ver": 536870913,
+        "prev_ver": 536870914,
         "name": "Desktop Audio",
         "uuid": "c5934800-3037-4017-8072-9c261da3deed",
         "id": "pulse_output_capture",
@@ -31,7 +31,7 @@
         "private_settings": {}
     },
     "AuxAudioDevice1": {
-        "prev_ver": 536870913,
+        "prev_ver": 536870914,
         "name": "Mic/Aux",
         "uuid": "86efa205-60aa-4c14-8bff-d14c4f1a3f69",
         "id": "pulse_input_capture",
@@ -42,7 +42,7 @@
         "mixers": 255,
         "sync": 0,
         "flags": 0,
-        "volume": 1.0,
+        "volume": 0.2406037300825119,
         "balance": 0.5,
         "enabled": true,
         "muted": true,
@@ -87,13 +87,13 @@
     "name": "Untitled",
     "sources": [
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "Main Monitor",
             "uuid": "272c60b5-3e46-40b6-9511-3d229404b54b",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 14,
+                "id_counter": 18,
                 "custom_size": false,
                 "items": [
                     {
@@ -152,64 +152,9 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "Whole Screen Capture",
-                        "source_uuid": "2645f565-535d-45e9-8bcc-c73da0e68a65",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 10,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.4062957763671875,
-                            "y": 1.40625
-                        },
-                        "scale_rel": {
-                            "x": 1.4062957763671875,
-                            "y": 1.40625
-                        },
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_rel": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
                         "name": "VTuber Model",
                         "source_uuid": "df24d076-a1da-4643-8ec5-ac600242fefe",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -315,6 +260,116 @@
                             "duration": 0
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Live Split One Druid",
+                        "source_uuid": "fc691af2-11f8-44f0-9bd0-8ac5bdd7a6ad",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 17,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Screen Capture (PipeWire)",
+                        "source_uuid": "ff99a1f4-ee3c-4223-aef7-38488a9bc072",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 18,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.4055637121200562,
+                            "y": 1.4049478769302368
+                        },
+                        "scale_rel": {
+                            "x": 1.4055637121200562,
+                            "y": 1.4049478769302368
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -333,12 +388,14 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
-                "libobs.show_scene_item.10": [],
-                "libobs.hide_scene_item.10": [],
                 "libobs.show_scene_item.13": [],
                 "libobs.hide_scene_item.13": [],
                 "libobs.show_scene_item.14": [],
-                "libobs.hide_scene_item.14": []
+                "libobs.hide_scene_item.14": [],
+                "libobs.show_scene_item.17": [],
+                "libobs.hide_scene_item.17": [],
+                "libobs.show_scene_item.18": [],
+                "libobs.hide_scene_item.18": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -347,7 +404,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "External Monitor",
             "uuid": "d0884708-3c1b-4fee-97dd-516d1b19f16b",
             "id": "scene",
@@ -359,7 +416,7 @@
                     {
                         "name": "Screen Capture (PipeWire) 2",
                         "source_uuid": "70afd9ce-2578-4752-8e89-ff9a40a7d732",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -414,7 +471,7 @@
                     {
                         "name": "Chat External",
                         "source_uuid": "37907bf0-6d12-47a8-a5db-5a0555c86b6e",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -493,13 +550,13 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "Screen Capture (PipeWire) 2",
             "uuid": "70afd9ce-2578-4752-8e89-ff9a40a7d732",
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "fd13e709-ac25-4e22-8c03-185530fedd5d"
+                "RestoreToken": "b2c1c476-1ace-4077-aeb1-2d0f387461fe"
             },
             "mixers": 0,
             "sync": 0,
@@ -519,7 +576,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "Chat External",
             "uuid": "37907bf0-6d12-47a8-a5db-5a0555c86b6e",
             "id": "browser_source",
@@ -553,33 +610,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
-            "name": "Whole Screen Capture",
-            "uuid": "2645f565-535d-45e9-8bcc-c73da0e68a65",
-            "id": "pipewire-screen-capture-source",
-            "versioned_id": "pipewire-screen-capture-source",
-            "settings": {
-                "RestoreToken": "8653d01f-0e57-48fe-a12d-5330b05d6f29"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "VTuber Model",
             "uuid": "df24d076-a1da-4643-8ec5-ac600242fefe",
             "id": "pipewire-screen-capture-source",
@@ -605,7 +636,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 536870913,
+                    "prev_ver": 536870914,
                     "name": "Chroma Key",
                     "uuid": "0b62668c-6f79-46f8-96b4-99e0df4ffc1b",
                     "id": "chroma_key_filter",
@@ -636,19 +667,19 @@
             ]
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "brb",
             "uuid": "44d65c11-cff0-440b-a575-9d54acebabfa",
             "id": "text_ft2_source",
             "versioned_id": "text_ft2_source_v2",
             "settings": {
+                "text": "BRB",
                 "font": {
                     "face": "Maple Mono",
                     "style": "Regular",
                     "size": 256,
                     "flags": 0
-                },
-                "text": "BRB"
+                }
             },
             "mixers": 0,
             "sync": 0,
@@ -668,7 +699,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 536870914,
             "name": "Vtuber",
             "uuid": "6a1062c4-7e1f-4410-9f9f-4cdf91d8fcff",
             "id": "scene",
@@ -755,6 +786,58 @@
             "monitoring_type": 0,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
+        },
+        {
+            "prev_ver": 536870914,
+            "name": "Live Split One Druid",
+            "uuid": "fc691af2-11f8-44f0-9bd0-8ac5bdd7a6ad",
+            "id": "pipewire-screen-capture-source",
+            "versioned_id": "pipewire-screen-capture-source",
+            "settings": {
+                "RestoreToken": "29f76df9-94f8-4b65-a32b-352f543f72c0"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 536870914,
+            "name": "Screen Capture (PipeWire)",
+            "uuid": "ff99a1f4-ee3c-4223-aef7-38488a9bc072",
+            "id": "pipewire-screen-capture-source",
+            "versioned_id": "pipewire-screen-capture-source",
+            "settings": {
+                "RestoreToken": "ed1cfb75-0c7a-4aeb-8aea-ed5588c3a5e5"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
         }
     ],
     "groups": [],
@@ -788,13 +871,9 @@
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -7,
+    "scaling_level": -17,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
-    "virtual-camera": {
-        "type2": 1,
-        "scene": "Vtuber"
-    },
     "modules": {
         "scripts-tool": [],
         "output-timer": {

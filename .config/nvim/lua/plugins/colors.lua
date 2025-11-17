@@ -1,5 +1,9 @@
 return {
     {
+      "olimorris/onedarkpro.nvim",
+      priority = 1000, -- Ensure it loads first
+    },
+    {
         'folke/tokyonight.nvim',
         priority = 1000,
         init = function()
